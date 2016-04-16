@@ -1,4 +1,8 @@
-<?php include '../inc/db.php';
+<?php
+
+include '../inc/db.php';
+
+$output = new stdClass();
 
 $sql = "SELECT * FROM users";
 

@@ -1,4 +1,4 @@
-<?php include 'setup.php' ?>
+<?php require 'setup.php' ?>
 
 <!DOCTYPE html>
 <html lang="en">
