@@ -2,4 +2,5 @@ bower_components
 node_modules
 escan
 inc/passwords.php
+npm-debug.log
 
