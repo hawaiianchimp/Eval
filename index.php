@@ -1,5 +1,4 @@
 <?php include 'inc/header.php';?>
-<body class="cover">
   <div class="site-wrapper cover">
     <div class="site-wrapper-inner">
       <div class="cover-container">
@@ -32,6 +31,5 @@
       </div>
     </div>
   </div>
-</body>
 
 <?php include 'inc/footer.php';?>

@@ -4,19 +4,18 @@ include '../inc/db.php';
 
 $output = new stdClass();
 
-$sql = "SELECT * FROM users";
+$sql = "SELECT * FROM players";
 
 if (!$result = $mysqli->query($sql)) {
   $output->errno = $mysqli->connect_errno;
   $output->error = $mysqli->connect_error;
-}
-
-if ($result->num_rows === 0) {
+} else if ($result->num_rows === 0) {
   console('No rows found', 'error');
   $output->error = 'No Rows';
+} else {
+  $players = $result->fetch_all(MYSQLI_ASSOC);
+  $output->data = $players;
 }
-
-$output->data = [$result->fetch_assoc()];
 
 echo json_encode($output);
 
