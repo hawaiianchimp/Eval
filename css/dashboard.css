@@ -7,6 +7,14 @@ body {
   padding-top: 50px;
 }
 
+tr.clickable {
+  cursor: pointer;
+}
+
+tr.clickable:hover {
+  background-color: #9CC9F3 !important;
+}
+
 
 /*
  * Global add-ons

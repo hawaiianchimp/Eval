@@ -15,4 +15,24 @@ function console($data, $type='log') {
   echo $output;
 }
 
+/**
+ * Get the age from birthdate
+ * @param $birthdate {Date}
+ **/
+function getAge($birthdate) {
+    $then = date('Ymd', strtotime($birthdate));
+    $diff = date('Ymd') - $then;
+    return substr($diff, 0, -4);
+}
+
+
+/**
+ * Display 3 digit numbers
+ * @param $number {Number}
+ **/
+function tripleDigit($number) {
+    return sprintf("%'.03d", $number);
+}
+
+
 ?>
