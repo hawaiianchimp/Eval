@@ -2,8 +2,7 @@
 
 include '../inc/db.php';
 
-$weight = $_GET['weight'];
-$height = $_GET['height'];
+$bib = $_GET['bib'];
 $pid = $_GET['pid'];
 $output = new stdClass();
 $error = new stdClass();
@@ -15,30 +14,19 @@ if (!$pid) {
 } else if (!is_numeric($pid)) {
   $error->message = "Player id needs to be a number";
   $error->count++;
-} else if (!$weight && !$height) {
-  $error->message = "No weight or height provided";
+} else if (!$bib) {
+  $error->message = "No bib provided";
   $error->count++;
-}
-
-if (is_numeric($weight) && is_numeric($height)) {
-  $sql = "UPDATE players
-          SET weight = '".$weight."',
-          height = '".$height."'
-          WHERE id = ".$pid;
-} else if (is_numeric($height)) {
-  $sql = "UPDATE players
-          SET height = '".$height."'
-          WHERE id = ".$pid;
-} else if (is_numeric($weight)) {
-  $sql = "UPDATE players
-          SET weight = '".$weight."'
-          WHERE id = ".$pid;
-} else {
-  $error->message = "Height and weight need to be numbers";
+} else if (!is_numeric($bib)) {
+  $error->message = "bib need to be numbers";
   $error->count++;
 }
 
 if ($error->count === 0) {
+  $sql = "UPDATE players
+        SET bib = '".$bib."',
+        bib_update = NOW()
+        WHERE id = ".$pid;
 
   if ($mysqli->query($sql) === true) {
     http_response_code(200);

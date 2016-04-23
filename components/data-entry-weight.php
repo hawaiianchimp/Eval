@@ -1,5 +1,5 @@
 <?php
-  $sql = "SELECT firstname, lastname, age, weight, height, bib, id FROM players
+  $sql = "SELECT firstname, lastname, age, bib, id FROM players
           WHERE id = ".$_GET['pid'];
   $player = [];
   if (!$result = $mysqli->query($sql)) {
@@ -14,7 +14,7 @@
   <div class="col-xs-12 col-md-4">
     <div class="input-group input-group-lg">
       <h1><strong> <?php echo $player['lastname'].', '.$player['firstname'] ?></strong></h1>
-      <h1> ID: <?php echo tripleDigit($player['id']) ?>
+      <h1> ID: <?php echo tripleDigit($player['bib']) ?>
            Age: <?php echo $player['age'] ?></h1>
     </div>
   </div>
@@ -39,7 +39,7 @@
         </div>
       </div>
 
-      <div class="form-group col-xs-12 col-sm-4 col-md-4">
+      <div class="form-group col-xs-12 col-sm-4">
         <label for='weight'>Height</label>
         <div class="input-group input-group-lg">
           <input name="height"
@@ -53,12 +53,12 @@
           <span class="input-group-addon" id="sizing-addon1">in</span>
         </div>
       </div>
-      <div class="form-group col-xs-12 col-sm-4 col-md-4">
+      <div class="form-group col-xs-12 col-sm-4">
         <div class="input-group input-group-lg">
 
         </div>
       </div>
-      <div class="form-group col-xs-12 col-sm-4 col-md-4">
+      <div class="form-group col-xs-12 col-sm-4">
       <input name="save"
                   type="submit"
                   class="btn btn-lg btn-primary"
@@ -81,16 +81,22 @@
 
       function successHandler(data) {
         console.log(data);
-        $('.form-weight').find('.form-group').addClass('has-success');
-        $('.form-weight input[name="save"]').val('Saved!').removeClass('btn-primary').addClass('btn-success');
+        $('.form-bib').find('.form-group').removeClass('has-error').addClass('has-success');
+        $('#bib-error').text('');
+        $('.form-bib input[name="save"]').val('Saved!').removeClass('btn-primary').addClass('btn-success');
       }
 
       function errorHandler(xhr, status, error){
+        var data = xhr.responseJSON;
+        console.log(data);
         console.log(status);
         console.log(error);
+        $('.form-bib input[name="save"]').val('Save').removeClass('btn-success').addClass('btn-primary');
+        $('.form-bib').find('.form-group').removeClass('has-success').addClass('has-error');
+        $('#bib-error').text(data.error && data.error.message);
       }
 
-      function submitForm(form, url, success, error){
+      function submitForm(form, url, success, error) {
         form.submit(function (e) {
           e.preventDefault();
           $.ajax({

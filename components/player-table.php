@@ -35,10 +35,10 @@
   <thead>
     <tr>
       <th>
-        <a href="?sortby=id&dir=<?php echo $dir_op ?>">
-          <?php $glyph = ($sortby === 'id') ? $glyphicon : '' ?>
+        <a href="?sortby=bib&dir=<?php echo $dir_op ?>">
+          <?php $glyph = ($sortby === 'bib') ? $glyphicon : '' ?>
           <span class="glyphicon <?php echo $glyph ?>" aria-hidden="true"></span>
-          <span>#</span>
+          <span>Bib#</span>
         </a>
       </th>
       <th>
@@ -91,7 +91,7 @@
         <a>
           <tr onclick="window.document.location='?pid=<?php echo $player['id'] ?>'"
               class="clickable <?php echo ($pid === $player['id']) ? 'warning':''?>">
-            <td><?php echo $player['id'] ?></td>
+            <td><?php echo tripleDigit($player['bib']) ?></td>
             <td><?php echo $player['lastname'].', '.$player['firstname'] ?></td>
             <td><?php echo $player['age'] ?></td>
             <td><?php echo $player['weight'] ?></td>
