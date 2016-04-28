@@ -8,19 +8,19 @@
     <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
     <link rel="stylesheet" type="text/css" href="css/cover.css">
     <link rel="stylesheet" type="text/css" href="css/dashboard.css">
+    <link rel="stylesheet" type="text/css" href="css/sb-admin.css">
+    <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css">
 
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/moment.min.js"></script>
-
-
 
     <meta name="apple-mobile-web-app-capable"
           content="yes">
 
     <!-- Make the app title different than the page title. -->
     <meta name="apple-mobile-web-app-title"
-          content="iOS 8 web app">
+          content="Eval">
 
     <!-- Configure the status bar. -->
     <meta name="apple-mobile-web-app-status-bar-style"
@@ -149,4 +149,7 @@
     </style>
   </head>
   <body class="dashboard">
-    <?php include 'components/navbar.php' ?>
+    <div id="wrapper">
+      <?php include 'components/nav-bar.php' ?>
+        <div id="page-wrapper">
+          <div class="container-fluid">
