@@ -18,53 +18,53 @@
   <div class="col-xs-12 col-md-6">
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h4>Edit Weight and Height</h4>
+        <h4>Edit Jump</h4>
       </div>
       <div class="panel-body">
-        <form class="form form-weight">
+        <form class="form form-jmp1">
           <input name="pid"
                 type="hidden"
                 value="<?php echo $_GET['pid'] ?>">
           <div class="form-group col-xs-12">
-            <label for='weight'>Weight</label>
+            <label for='jmp1'>First Jump</label>
             <div class="input-group input-group-lg">
-              <input name="weight"
+              <input name="jmp1"
                       type="number"
-                      step="0.01"
+                      step="0.1"
                       pattern="\d*"
                       class="form-control"
                       onfocus="this.select();"
                       onmouseup="return false;"
-                      value="<?php echo $player['weight'] ?>"
-                      placeholder="<?php echo $player['weight'] ?>"
+                      value="<?php echo $player['jmp1'] ?>"
+                      placeholder="<?php echo $player['jmp1'] ?>"
                       aria-describedby="sizing-addon1">
-              <span class="input-group-addon" id="sizing-addon1">lb</span>
+              <span class="input-group-addon" id="sizing-addon1">sec</span>
             </div>
           </div>
 
           <div class="form-group col-xs-12">
-            <label for='height'>Height</label>
+            <label for='jmp2'>Second Jump</label>
             <div class="input-group input-group-lg">
-              <input name="height"
+              <input name="jmp2"
                       type="number"
-                      step="0.01"
+                      step="0.1"
                       pattern="\d*"
                       class="form-control"
                       onfocus="this.select();"
                       onmouseup="return false;"
-                      value="<?php echo $player['height'] ?>"
-                      placeholder="<?php echo $player['height'] ?>"
+                      value="<?php echo $player['jmp2'] ?>"
+                      placeholder="<?php echo $player['jmp2'] ?>"
                       aria-describedby="sizing-addon1">
-              <span class="input-group-addon" id="sizing-addon1">in</span>
+              <span class="input-group-addon" id="sizing-addon1">sec</span>
             </div>
             <span class="error help-block"></span>
           </div>
-          <div class="form-group col-xs-12">
+          <div class="form-group col-xs-12 col-sm-4">
             <div class="input-group input-group-lg">
 
             </div>
           </div>
-          <div class="form-group col-xs-12">
+          <div class="form-group col-xs-12 col-sm-4">
           <input name="save"
                       type="submit"
                       class="btn btn-lg btn-primary"
@@ -76,7 +76,7 @@
   </div>
   <script>
     $(document).ready(function() {
-      formSetup($('.form-weight'), 'api/weight-and-height.php');
+      formSetup($('.form-jmp1'), 'api/jump.php');
     });
   </script>
 </div>

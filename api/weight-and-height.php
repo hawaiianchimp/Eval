@@ -9,27 +9,27 @@ $output = new stdClass();
 $error = new stdClass();
 $error->count = 0;
 
-if (!$pid) {
+if ($pid === '') {
   $error->message = "No player id provided";
   $error->count++;
-} else if (!is_numeric($pid)) {
+} else if (!is_numeric($pid) || $pid <= 0) {
   $error->message = "Player id needs to be a number";
   $error->count++;
-} else if (!$weight && !$height) {
+} else if ($weight === '' && $height === '') {
   $error->message = "No weight or height provided";
   $error->count++;
 }
 
-if (is_numeric($weight) && is_numeric($height)) {
+if (is_numeric($weight) && is_numeric($height) && $weight >= 0 && $height >= 0) {
   $sql = "UPDATE players
           SET weight = '".$weight."',
           height = '".$height."'
           WHERE id = ".$pid;
-} else if (is_numeric($height)) {
+} else if (is_numeric($height) && $height >= 0) {
   $sql = "UPDATE players
           SET height = '".$height."'
           WHERE id = ".$pid;
-} else if (is_numeric($weight)) {
+} else if (is_numeric($weight) && $height >= 0) {
   $sql = "UPDATE players
           SET weight = '".$weight."'
           WHERE id = ".$pid;

@@ -4,16 +4,33 @@
 <html lang="en">
   <head>
     <title><?php echo TITLE ?></title>
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
-    <link rel="stylesheet" type="text/css" href="css/cover.css">
-    <link rel="stylesheet" type="text/css" href="css/dashboard.css">
-    <link rel="stylesheet" type="text/css" href="css/sb-admin.css">
-    <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="../bower_components/font-awesome/css/font-awesome.min.css">
+
+    <!-- DataTables CSS -->
+    <link href="../bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css" rel="stylesheet">
+    <link href="../bower_components/datatables-responsive/css/dataTables.responsive.css" rel="stylesheet">
+    <link href="../bower_components/datatables-responsive/css/dataTables.responsive.css" rel="stylesheet">
 
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/moment.min.js"></script>
+
+    <!-- Form Submit -->
+    <script src='js/form-submit.js'></script>
+
+    <!-- DataTables JavaScript -->
+    <script src="../bower_components/datatables/media/js/jquery.dataTables.min.js"></script>
+    <script src="../bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js"></script>
+    <script src="../bower_components/datatables-responsive/js/dataTables.responsive.js"></script>
+    <script src="../bower_components/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
+
+
+    <link rel="stylesheet" type="text/css" href="css/cover.css">
+    <link rel="stylesheet" type="text/css" href="css/dashboard.css">
+    <link rel="stylesheet" type="text/css" href="css/sb-admin.css">
+
 
     <meta name="apple-mobile-web-app-capable"
           content="yes">
@@ -147,9 +164,3 @@
         -webkit-text-size-adjust: 100%;
       }
     </style>
-  </head>
-  <body class="dashboard">
-    <div id="wrapper">
-      <?php include 'components/nav-bar.php' ?>
-        <div id="page-wrapper">
-          <div class="container-fluid">

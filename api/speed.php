@@ -2,34 +2,53 @@
 
 include '../inc/db.php';
 
-$bib = $_GET['bib'];
+$spd1 = $_GET['spd1'];
+$spd2 = $_GET['spd2'];
 $pid = $_GET['pid'];
 $output = new stdClass();
 $error = new stdClass();
 $error->count = 0;
 
-if (!$pid) {
+if ($pid === '') {
   $error->message = "No player id provided";
   $error->count++;
 } else if (!is_numeric($pid)) {
   $error->message = "Player id needs to be a number";
   $error->count++;
-} else if (!$bib) {
-  $error->message = "No bib provided";
+} else if ($spd1 === '' && $spd2 === '') {
+  $error->message = "No spd1 or spd2 provided";
   $error->count++;
-} else if (!is_numeric($bib) || $bib <= 0) {
-  $error->message = "bib need to be numbers";
+}
+
+if (is_numeric($spd1) && is_numeric($spd2) && $spd2 >= 0 && $spd1 >= 0) {
+  $sql = "UPDATE players
+          SET spd1 = '".$spd1."',
+          spd2 = '".$spd2."'
+          WHERE id = ".$pid;
+} else if (is_numeric($spd2) && $spd2 >= 0) {
+  $sql = "UPDATE players
+          SET spd2 = '".$spd2."'
+          WHERE id = ".$pid;
+} else if (is_numeric($spd1) && $spd1 >= 0) {
+  $sql = "UPDATE players
+          SET spd1 = '".$spd1."'
+          WHERE id = ".$pid;
+} else {
+  $error->message = "spd1 and spd2 need to be numbers";
   $error->count++;
 }
 
 if ($error->count === 0) {
-  $sql = "UPDATE players
-        SET bib = '".$bib."',
-        bib_update = NOW()
-        WHERE id = ".$pid;
 
   if ($mysqli->query($sql) === true) {
     http_response_code(200);
+
+    $speed = @min(array_filter([$spd1, $spd2]));
+    $sql = "UPDATE players
+          SET speed = ".$speed."
+          WHERE id = ".$pid;
+    $mysqli->query($sql);
+
     $output->status = http_response_code();
     $output->message = "Update Successful";
     echo json_encode($output);

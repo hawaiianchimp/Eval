@@ -4,6 +4,6 @@
  * Setup the app variables here
  **/
 
-define('TITLE', 'LJFL Eval');
+define('TITLE', 'LivFootball Eval');
 
 ?>

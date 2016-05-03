@@ -1,4 +1,6 @@
+<?php header('Location:'.'s_coaches.php'); ?>
 <?php include 'inc/header.php';?>
+<?php include 'inc/header-close.php';?>
   <div class="site-wrapper cover">
     <div class="site-wrapper-inner">
       <div class="cover-container">

@@ -1,26 +1,8 @@
 <?php
-  $sortby = $_GET['sortby'];
   $pid = $_GET['pid'];
-  $dir = ($_GET['dir'] === 'DESC') ? 'DESC': 'ASC';
-  $dir_op = ($dir === 'DESC') ? 'ASC': 'DESC';
-  $glyphicon = ($dir === 'ASC') ? 'glyphicon-triangle-bottom' : 'glyphicon-triangle-top';
-  $search = $_GET['search'];
 
-  $sql = "SELECT p.id, p.firstname, p.lastname, p.birthdate, m.height,
-          m.weight, m.speed, m.leap, m.jump, m.stn, m.pu,
-          MIN(m.datetime) AS measure_date
-          FROM players AS p
-          LEFT JOIN measurements AS m ON m.player_id = p.id
-          GROUP BY m.player_id
-          ORDER BY p.id ASC";
-
-  $sql = "SELECT * FROM players";
-  if ($search) {
-    $sql .= " WHERE bib LIKE %".$search."% OR firstname LIKE %".$search."% OR lastname LIKE %".$search."% OR age LIKE %".$search."%";
-  }
-  if ($sortby) {
-    $sql .= " ORDER BY ".$sortby." ".$dir;
-  }
+  $sql = "SELECT *
+          FROM players";
 
   $players = [];
   if (!$result = $mysqli->query($sql)) {
@@ -31,56 +13,36 @@
   }
 ?>
 
-<table class="table table-striped">
+<table id="players-table" class="display responsive nowrap table table-compact">
   <thead>
     <tr>
-      <th>
-        <a href="?sortby=bib&dir=<?php echo $dir_op ?>">
-          <?php $glyph = ($sortby === 'bib') ? $glyphicon : '' ?>
-          <span class="glyphicon <?php echo $glyph ?>" aria-hidden="true"></span>
-          <span>Bib#</span>
-        </a>
+      <th align="center">
+        <span>Bib#</span>
       </th>
       <th>
-        <a href="?sortby=lastname&dir=<?php echo $dir_op ?>">
-          <?php $glyph = ($sortby === 'lastname') ? $glyphicon : '' ?>
-          <span class="glyphicon <?php echo $glyph ?>" aria-hidden="true"></span>
-          <span>Name</span>
-        </a>
+        <span>Name</span>
       </th>
-      <th>
-        <a href="?sortby=age&dir=<?php echo $dir_op ?>">
-          <?php $glyph = ($sortby === 'age') ? $glyphicon : '' ?>
-          <span class="glyphicon <?php echo $glyph ?>" aria-hidden="true"></span>
-          <span>Age</span>
-        </a>
+      <th align="center">
+        <span>Age</span>
       </th>
-      <th>
-        <a href="?sortby=weight&dir=<?php echo $dir_op ?>">
-          <?php $glyph = ($sortby === 'weight') ? $glyphicon : '' ?>
-          <span class="glyphicon <?php echo $glyph ?>" aria-hidden="true"></span>
-          <span>Weight</span>
-        </a>
+      <th align="center">
+        <span>Weight</span>
       </th>
-      <th>
-        <a href="?sortby=height&dir=<?php echo $dir_op ?>">
-          <?php $glyph = ($sortby === 'height') ? $glyphicon : '' ?>
-          <span class="glyphicon <?php echo $glyph ?>" aria-hidden="true"></span>
-          <span>Height</span>
-        </a>
-      <th>
+      <th align="center">
+        <span>Height</span>
+      <th align="center">
         Speed
       </th>
-      <th>
+      <th align="center">
         Jump
       </th>
-      <th>
+      <th align="center">
         Leap
       </th>
-      <th>
-        PU
+      <th align="center">
+        Push Ups
       </th>
-      <th>
+      <th align="center">
         Stn 5
       </th>
     </tr>
@@ -91,18 +53,33 @@
         <a>
           <tr onclick="window.document.location='?pid=<?php echo $player['id'] ?>'"
               class="clickable <?php echo ($pid === $player['id']) ? 'warning':''?>">
-            <td><?php echo tripleDigit($player['bib']) ?></td>
+            <td align="center"><?php echo tripleDigit($player['bib']) ?></td>
             <td><?php echo $player['lastname'].', '.$player['firstname'] ?></td>
-            <td><?php echo $player['age'] ?></td>
-            <td><?php echo $player['weight'] ?></td>
-            <td><?php echo $player['height'] ?></td>
-            <td><?php echo $player['speed'] ?></td>
-            <td><?php echo $player['jump'] ?></td>
-            <td><?php echo $player['leap'] ?></td>
-            <td><?php echo $player['pu'] ?></td>
-            <td><?php echo $player['stn'] ?></td>
+            <td align="center"><?php echo $player['age'] ?></td>
+            <td align="center"><?php echo round($player['weight']) ?></td>
+            <td align="center"><?php echo round($player['height']) ?></td>
+            <td align="center"><?php echo round($player['speed'],1) ?></td>
+            <td align="center"><?php echo round($player['jump'],1) ?></td>
+            <td align="center"><?php echo round($player['leap'], 1) ?></td>
+            <td align="center"><?php echo round($player['pu']) ?></td>
+            <td align="center"><?php echo round($player['stn']) ?></td>
           </tr>
         </a>
     <?php } ?>
   </tbody>
 </table>
+
+<script>
+  $(document).ready(function() {
+    $datatable = $('#players-table').DataTable({
+        dom: '<f<t>>',
+        responsive: true,
+        paging: false,
+        scrollY: "240px",
+        scrollCollapse: true,
+        tabIndex: -1,
+        colReorder: true,
+        order: [[0, 'asc']]
+    });
+  });
+</script>

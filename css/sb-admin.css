@@ -7,15 +7,9 @@
 /* Global Styles */
 
 body {
-    margin-top: 100px;
     background-color: #222;
 }
 
-@media(min-width:768px) {
-    body {
-        margin-top: 50px;
-    }
-}
 
 #wrapper {
     padding-left: 0;
@@ -115,7 +109,7 @@ ul.alert-dropdown {
 @media(min-width:768px) {
     .side-nav {
         position: fixed;
-        top: 51px;
+        top: 0px;
         left: 225px;
         width: 225px;
         margin-left: -225px;
@@ -224,4 +218,35 @@ ul.alert-dropdown {
 
 .panel-yellow > a:hover {
     color: #df8a13;
+}
+
+/*Added CSS for scoll table testing */
+
+
+#constrainer {       height: 200px;       width: 200px; }  /* fixed height and width */
+
+/* to scroll only horizontally */
+.scrolltable {
+    overflow-x: scroll;
+    height: 100%;
+}
+
+/* make table exactly wide enough for it’s content and only scroll vertically */
+.scrolltable > .body {
+    width: -webkit-fit-content;
+    overflow-y: scroll;
+}
+
+/* header to use it’s normal height and give the rest of the vertical space to the body */
+.scrolltable {
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: column;
+    -webkit-flex-direction: column;
+}
+.scrolltable > .header {
+
+.scrolltable > .body {
+    flex: 1;
+    -webkit-flex: 1;
 }

@@ -18,44 +18,44 @@
   <div class="col-xs-12 col-md-6">
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h4>Edit Weight and Height</h4>
+        <h4>Edit Leap</h4>
       </div>
       <div class="panel-body">
-        <form class="form form-weight">
+        <form class="form form-lp1">
           <input name="pid"
                 type="hidden"
                 value="<?php echo $_GET['pid'] ?>">
           <div class="form-group col-xs-12">
-            <label for='weight'>Weight</label>
+            <label for='lp1'>First Leap</label>
             <div class="input-group input-group-lg">
-              <input name="weight"
+              <input name="lp1"
                       type="number"
-                      step="0.01"
+                      step="0.1"
                       pattern="\d*"
-                      class="form-control"
                       onfocus="this.select();"
                       onmouseup="return false;"
-                      value="<?php echo $player['weight'] ?>"
-                      placeholder="<?php echo $player['weight'] ?>"
+                      class="form-control"
+                      value="<?php echo $player['lp1'] ?>"
+                      placeholder="<?php echo $player['lp1'] ?>"
                       aria-describedby="sizing-addon1">
-              <span class="input-group-addon" id="sizing-addon1">lb</span>
+              <span class="input-group-addon" id="sizing-addon1">sec</span>
             </div>
           </div>
 
           <div class="form-group col-xs-12">
-            <label for='height'>Height</label>
+            <label for='lp1'>Second Leap</label>
             <div class="input-group input-group-lg">
-              <input name="height"
+              <input name="lp2"
                       type="number"
-                      step="0.01"
+                      step="0.1"
                       pattern="\d*"
                       class="form-control"
                       onfocus="this.select();"
                       onmouseup="return false;"
-                      value="<?php echo $player['height'] ?>"
-                      placeholder="<?php echo $player['height'] ?>"
+                      value="<?php echo $player['lp2'] ?>"
+                      placeholder="<?php echo $player['lp2'] ?>"
                       aria-describedby="sizing-addon1">
-              <span class="input-group-addon" id="sizing-addon1">in</span>
+              <span class="input-group-addon" id="sizing-addon1">sec</span>
             </div>
             <span class="error help-block"></span>
           </div>
@@ -76,7 +76,7 @@
   </div>
   <script>
     $(document).ready(function() {
-      formSetup($('.form-weight'), 'api/weight-and-height.php');
+      formSetup($('.form-lp1'), 'api/leap.php');
     });
   </script>
 </div>

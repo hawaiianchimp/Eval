@@ -2,34 +2,53 @@
 
 include '../inc/db.php';
 
-$bib = $_GET['bib'];
+$lp1 = $_GET['lp1'];
+$lp2 = $_GET['lp2'];
 $pid = $_GET['pid'];
 $output = new stdClass();
 $error = new stdClass();
 $error->count = 0;
 
-if (!$pid) {
+if ($pid === '') {
   $error->message = "No player id provided";
   $error->count++;
 } else if (!is_numeric($pid)) {
   $error->message = "Player id needs to be a number";
   $error->count++;
-} else if (!$bib) {
-  $error->message = "No bib provided";
+} else if ($lp1 === '' && $lp2 === '') {
+  $error->message = "No leap 1 or leap 2 provided";
   $error->count++;
-} else if (!is_numeric($bib) || $bib <= 0) {
-  $error->message = "bib need to be numbers";
+}
+
+if (is_numeric($lp1) && is_numeric($lp2) && $lp2 >= 0 && $lp1 >= 0) {
+  $sql = "UPDATE players
+          SET lp1 = '".$lp1."',
+          lp2 = '".$lp2."'
+          WHERE id = ".$pid;
+} else if (is_numeric($lp2) && $lp2 >= 0) {
+  $sql = "UPDATE players
+          SET lp2 = '".$lp2."'
+          WHERE id = ".$pid;
+} else if (is_numeric($lp1) && $lp1 >= 0) {
+  $sql = "UPDATE players
+          SET lp1 = '".$lp1."'
+          WHERE id = ".$lp;
+} else {
+  $error->message = "leap 1 and leap 2 need to be numbers";
   $error->count++;
 }
 
 if ($error->count === 0) {
-  $sql = "UPDATE players
-        SET bib = '".$bib."',
-        bib_update = NOW()
-        WHERE id = ".$pid;
 
   if ($mysqli->query($sql) === true) {
     http_response_code(200);
+
+    $leap = @max([$lp1, $lp2]);
+    $sql = "UPDATE players
+          SET leap = ".$leap."
+          WHERE id = ".$pid;
+    $mysqli->query($sql);
+
     $output->status = http_response_code();
     $output->message = "Update Successful";
     echo json_encode($output);
