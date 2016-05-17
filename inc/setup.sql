@@ -22,22 +22,6 @@ SET time_zone = "+00:00";
 -- Database: `c9`
 --
 
--- --------------------------------------------------------
-
---
--- Table structure for table `logon`
---
-
-CREATE TABLE `logon` (
-  `ucinetid` varchar(8) COLLATE latin1_general_ci NOT NULL,
-  `password` varchar(50) COLLATE latin1_general_ci NOT NULL DEFAULT '',
-  `last_login` datetime NOT NULL,
-  `date` date NOT NULL,
-  `time` time NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
-
--- --------------------------------------------------------
-
 --
 -- Table structure for table `players`
 --
@@ -64,37 +48,6 @@ CREATE TABLE `players` (
   `lp2` float DEFAULT NULL,
   `stn5` float DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `users`
---
-
-CREATE TABLE `users` (
-  `ucinetid` varchar(8) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
-  `barcode` varchar(100) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL COMMENT 'barcode id',
-  `name` varchar(100) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL COMMENT 'first name',
-  `email` varchar(150) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL COMMENT 'email',
-  `major` varchar(75) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL COMMENT 'Major',
-  `level` varchar(20) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL COMMENT 'Year Level',
-  `opt` tinyint(1) NOT NULL DEFAULT '1' COMMENT 'opt-out mail',
-  `access` tinyint(1) NOT NULL DEFAULT '0' COMMENT 'access level',
-  `elig` tinyint(1) NOT NULL DEFAULT '1' COMMENT 'prize eligiblility',
-  `date` date NOT NULL,
-  `time` time NOT NULL,
-  `volunteer` varchar(8) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `logon`
---
-ALTER TABLE `logon`
-  ADD PRIMARY KEY (`ucinetid`);
 
 --
 -- Indexes for table `players`
