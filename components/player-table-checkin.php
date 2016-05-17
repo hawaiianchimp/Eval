@@ -5,7 +5,7 @@
           FROM players
           WHERE bib IS NULL";
 
-  $players = [];
+  $players = array();
   if (!$result = $mysqli->query($sql)) {
     console('Players: '.$mysqli->connect_errno, 'error');
     console('Players: '.$mysqli->connect_error, 'error');

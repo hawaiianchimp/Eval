@@ -2,7 +2,7 @@
   $sql = "SELECT * FROM players
           WHERE id = ".$_GET['pid'];
           //Select only players who checked-in == bib id not empty
-  $player = [];
+  $player = array();
   if (!$result = $mysqli->query($sql)) {
     console('Players: '.$mysqli->connect_errno, 'error');
     console('Players: '.$mysqli->connect_error, 'error');

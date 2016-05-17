@@ -1,7 +1,7 @@
 <?php
   $sql = "SELECT * FROM players
           WHERE id = ".$_GET['pid'];
-  $player = [];
+  $player = array();
   if (!$result = $mysqli->query($sql)) {
     console('Players: '.$mysqli->connect_errno, 'error');
     console('Players: '.$mysqli->connect_error, 'error');
