@@ -30,7 +30,7 @@
             <div class="input-group input-group-lg">
               <input name="weight"
                       type="number"
-                      step="0.01"
+                      step="0.1"
                       pattern="\d*"
                       class="form-control"
                       onfocus="this.select();"
@@ -47,7 +47,7 @@
             <div class="input-group input-group-lg">
               <input name="height"
                       type="number"
-                      step="0.01"
+                      step="0.1"
                       pattern="\d*"
                       class="form-control"
                       onfocus="this.select();"

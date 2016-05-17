@@ -5,10 +5,10 @@
   <div class="panel-body">
     <dl>
       <dt style="color:blue;">
-        <strong><h3>Bib#: </h3></strong>
+        <strong><h3>Birthday: </h3></strong>
       </dt>
       <dd>
-        <h3><?php echo tripleDigit($player['bib']) ?></h3>
+        <h3><?php echo $player['birthday'] ?></h3>
       </dd>
       <!--
       <dt>

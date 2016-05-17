@@ -5,7 +5,7 @@
     <div class="col-xs-12 main">
       <h3 class="sub-header">Check in</h3>
       <div class="table-responsive">
-        <?php include 'components/player-table.php' ?>
+        <?php include 'components/player-table-checkin.php' ?>
       </div>
       <?php
         if ($_GET['pid']) {

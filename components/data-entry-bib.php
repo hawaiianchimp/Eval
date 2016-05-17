@@ -13,7 +13,7 @@
 
 <div>
   <div class="col-xs-12 col-md-6">
-    <?php include 'player-info.php' ?>
+    <?php include 'player-info-checkin.php' ?>
   </div>
 
   <div class="col-xs-12 col-md-6">
@@ -37,8 +37,8 @@
                       class="form-control"
                       onfocus="this.select();"
                       onmouseup="return false;"
-                      value="<?php echo $player['bib'] ?>"
-                      placeholder="<?php echo $player['bib'] ?>"
+                      value="<?php echo tripleDigit($player['bib']) ?>"
+                      placeholder="<?php echo tripleDigit($player['bib']) ?>"
                       aria-describedby="sizing-addon1">
               <span class="input-group-addon" id="sizing-addon1">bib</span>
             </div>

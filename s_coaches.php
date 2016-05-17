@@ -1,7 +1,8 @@
 <?php include 'inc/header.php' ?>
 
-    <!-- auto-refresh page every 10 sec. -->
-    <meta http-equiv="refresh" content="10">
+    <!-- auto-refresh page every 30 sec. -->
+
+    <meta http-equiv="refresh" content="1000">
 
 <?php include 'inc/header-close.php' ?>
 <?php include 'inc/db.php' ?>

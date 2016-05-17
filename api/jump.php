@@ -2,8 +2,8 @@
 
 include '../inc/db.php';
 
-$jmp1 = $_GET['jmp1'];
-$jmp2 = $_GET['jmp2'];
+$jmp1 = @round($_GET['jmp1'], 1);
+$jmp2 = @round($_GET['jmp2'], 1);
 $pid = $_GET['pid'];
 $output = new stdClass();
 $error = new stdClass();

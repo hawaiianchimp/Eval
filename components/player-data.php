@@ -1,10 +1,10 @@
 <div class="panel panel-default">
   <div class="panel-heading">
-    <h2>Player Data</h2>
+    <h4>Player Data</h4>
   </div>
   <div class="panel-body">
     <dl class="dl-horizontal">
-    <dt class="col-6-xs">Weight: </dt>
+    <dt class="col-6.xs">Weight: </dt>
     <dd class="col-6-xs"><?php echo $player['weight'] ?></dd>
     <dt class="col-6-xs">Height: </dt>
     <dd class="col-6-xs"><?php echo $player['height'] ?></dd>

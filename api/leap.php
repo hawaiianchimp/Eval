@@ -2,8 +2,8 @@
 
 include '../inc/db.php';
 
-$lp1 = $_GET['lp1'];
-$lp2 = $_GET['lp2'];
+$lp1 = @round($_GET['lp1'], 1);
+$lp2 = @round($_GET['lp2'], 1);
 $pid = $_GET['pid'];
 $output = new stdClass();
 $error = new stdClass();
@@ -32,7 +32,7 @@ if (is_numeric($lp1) && is_numeric($lp2) && $lp2 >= 0 && $lp1 >= 0) {
 } else if (is_numeric($lp1) && $lp1 >= 0) {
   $sql = "UPDATE players
           SET lp1 = '".$lp1."'
-          WHERE id = ".$lp;
+          WHERE id = ".$pid;
 } else {
   $error->message = "leap 1 and leap 2 need to be numbers";
   $error->count++;

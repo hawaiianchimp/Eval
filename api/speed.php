@@ -2,8 +2,8 @@
 
 include '../inc/db.php';
 
-$spd1 = $_GET['spd1'];
-$spd2 = $_GET['spd2'];
+$spd1 = round($_GET['spd1'], 1);
+$spd2 = round($_GET['spd2'], 1);
 $pid = $_GET['pid'];
 $output = new stdClass();
 $error = new stdClass();

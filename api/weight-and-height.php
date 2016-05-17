@@ -2,8 +2,8 @@
 
 include '../inc/db.php';
 
-$weight = $_GET['weight'];
-$height = $_GET['height'];
+$weight = @round($_GET['weight']);
+$height = @round($_GET['height']);
 $pid = $_GET['pid'];
 $output = new stdClass();
 $error = new stdClass();

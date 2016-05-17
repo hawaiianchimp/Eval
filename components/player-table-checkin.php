@@ -3,7 +3,7 @@
 
   $sql = "SELECT *
           FROM players
-          WHERE bib IS NOT NULL";
+          WHERE bib IS NULL";
 
   $players = [];
   if (!$result = $mysqli->query($sql)) {
@@ -24,27 +24,30 @@
         <span>Name</span>
       </th>
       <th align="center">
-        <span>Age</span>
+        <span>DOB</span>
       </th>
       <th align="center">
-        <span>Weight</span>
+        <span>L-Age</span>
       </th>
       <th align="center">
-        <span>Height</span>
-      <th align="center">
-        Speed
+        <span>Wt</span>
       </th>
       <th align="center">
-        Jump
+        <span>Ht</span>
+      <th align="center">
+        Spd
       </th>
       <th align="center">
-        Leap
+        Jmp
       </th>
       <th align="center">
-        Push Ups
+        Lp
       </th>
       <th align="center">
-        Stn 5
+        PU
+      </th>
+      <th align="center">
+        Stn5
       </th>
     </tr>
   </thead>
@@ -54,16 +57,17 @@
         <a>
           <tr onclick="window.document.location='?pid=<?php echo $player['id'] ?>'"
               class="clickable <?php echo ($pid === $player['id']) ? 'warning':''?>">
-            <td align="center"><?php echo tripleDigit($player['bib']) ?></td>
+            <td align="center"><?php echo $player['bib']  ?: '' ?></td>
             <td><?php echo $player['lastname'].', '.$player['firstname'] ?></td>
-            <td align="center"><?php echo $player['age'] ?: '' ?></td>
-            <td align="center"><?php echo round($player['weight']) ?: '' ?></td>
-            <td align="center"><?php echo round($player['height']) ?: '' ?></td>
-            <td align="center"><?php echo round($player['speed'],1) ?: '' ?></td>
-            <td align="center"><?php echo round($player['jump'],1) ?: '' ?></td>
-            <td align="center"><?php echo round($player['leap'],1) ?: '' ?></td>
-            <td align="center"><?php echo round($player['pu']) ?: '' ?></td>
-            <td align="center"><?php echo round($player['stn']) ?: '' ?></td>
+            <td align="center"><?php echo $player['birthday']  ?: '' ?></td>
+            <td align="center"><?php echo $player['age']  ?: '' ?></td>
+            <td align="center"><?php echo round($player['weight'])  ?: '' ?></td>
+            <td align="center"><?php echo round($player['height'])  ?: '' ?></td>
+            <td align="center"><?php echo round($player['speed'],1)  ?: '' ?></td>
+            <td align="center"><?php echo round($player['jump'],1)  ?: '' ?></td>
+            <td align="center"><?php echo round($player['leap'],1)  ?: '' ?></td>
+            <td align="center"><?php echo round($player['pu'])  ?: '' ?></td>
+            <td align="center"><?php echo round($player['stn'])  ?: '' ?></td>
           </tr>
         </a>
     <?php } ?>
