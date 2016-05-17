@@ -40,6 +40,7 @@
   if ($mysqli->connect_errno) {
     $output = new stdClass();
     $output->error = $mysqli->connect_errno;
+    echo $output->error;
     exit;
   }
 ?>
