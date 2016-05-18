@@ -19,8 +19,9 @@ echo '<br>Checking Install<br>';
 if (DBDATABASE && DBUSERNAME && DBSERVER) {
   $sql = 'SELECT COUNT( DISTINCT table_name) FROM information_schema.columns WHERE table_schema = "'.DBDATABASE.'";';
   $result = $mysqli->query($sql);
-  echo "<br>table count: ".$result->num_rows."<br>";
-  if ($result->num_rows === 0) {
+  $row = $result->fetch_row();
+  echo "<br>table count: ".$row[0]."<br>";
+  if ($row[0] === 0) {
     echo '<br>No tables found, creating tables...<br>';
     $sql = explode(';', file_get_contents('inc/setup.sql'));
     echo 'Getting setup.sql<br>';
