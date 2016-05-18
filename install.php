@@ -21,7 +21,7 @@ if (DBDATABASE && DBUSERNAME && DBSERVER) {
   $result = $mysqli->query($sql);
   $row = $result->fetch_row();
   echo "<br>table count: ".$row[0]."<br>";
-  if ($row[0] === 0) {
+  if ($row[0] == 0) {
     echo '<br>No tables found, creating tables...<br>';
     $sql = explode(';', file_get_contents('inc/setup.sql'));
     echo 'Getting setup.sql<br>';
