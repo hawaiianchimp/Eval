@@ -13,7 +13,7 @@
 <div class="col-xs-12 col-md-6">
   <div class="panel panel-default">
     <div class="panel-heading">
-      <h4>Player Create</h4>
+      <h4>Add a New Player</h4>
     </div>
     <div class="panel-body">
       <form class="form form-create">
@@ -49,12 +49,12 @@
           <div class="input-group input-group-lg">
             <input name="age"
                     type="number"
-                    step="0.1"
+
                     pattern="\d*"
                     class="form-control"
                     onfocus="this.select();"
                     onmouseup="return false;"
-                    placeholder="League Ag"
+                    placeholder="League Age"
                     aria-describedby="sizing-addon-years">
             <span class="input-group-addon" id="sizing-addon-years">years</span>
           </div>
