@@ -66,7 +66,7 @@
       $form: $form,
       url: 'api/create.php',
       submitOnBlur: false,
-      refreshPath: refreshPath,
+      enableFormRefreshOnSubmit: enableFormRefreshOnSubmit,
       enableFirstFocus: false,
       successText: 'Created!'
     }

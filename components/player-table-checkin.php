@@ -67,5 +67,7 @@
         colReorder: true,
         order: [[0, 'asc']]
     });
+    //default focus on search bar
+    $('input:first()').focus();
   });
 </script>

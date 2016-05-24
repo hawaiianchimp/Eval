@@ -22,18 +22,18 @@
         <?php include 'components/player-table-admin.php' ?>
       </div>
       <div>
-        <script> refreshPath = window.location.pathname + window.location.search; </script>
+        <script> enableFormRefreshOnSubmit = false; </script>
         <?php
           if ($player['firstname']) {
             include 'components/player-info-checkin.php';
             include 'components/player-info.php';
-            include 'components/player-data.php';
+            include 'components/data-entry-pu.php';
             include 'components/data-entry-bib.php';
             include 'components/data-entry-jump.php';
             include 'components/data-entry-leap.php';
-            include 'components/data-entry-pu.php';
             include 'components/data-entry-speed.php';
             include 'components/data-entry-weight.php';
+            include 'components/player-data.php';
             include 'components/data-entry-delete.php';
           }
           include 'components/data-entry-create.php';

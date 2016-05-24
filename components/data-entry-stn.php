@@ -40,8 +40,8 @@
   var options = {
     $form: $form,
     url: 'api/stn.php',
-    submitOnBlur: false,
-    refreshPath: refreshPath,
+    submitOnBlur: !$form.find('input[type!=hidden][type!=submit]').filter(function(e){ return !!this.value }).length,
+    enableFormRefreshOnSubmit: enableFormRefreshOnSubmit,
     enableFirstFocus: true,
     successText: 'Saved!'
   }

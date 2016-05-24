@@ -63,7 +63,7 @@
     $form: $form,
     url: 'api/weight-and-height.php',
     submitOnBlur: !$form.find('input[type!=hidden][type!=submit]').filter(function(e){ return !!this.value }).length,
-    refreshPath: refreshPath,
+    enableFormRefreshOnSubmit: enableFormRefreshOnSubmit,
     enableFirstFocus: true,
     successText: 'Saved!'
   }

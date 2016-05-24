@@ -41,7 +41,7 @@
     $form: $form,
     url: 'api/pu.php',
     submitOnBlur: !$form.find('input[type!=hidden][type!=submit]').filter(function(e){ return !!this.value }).length,
-    refreshPath: refreshPath,
+    enableFormRefreshOnSubmit: enableFormRefreshOnSubmit,
     enableFirstFocus: true,
     successText: 'Saved!'
   }

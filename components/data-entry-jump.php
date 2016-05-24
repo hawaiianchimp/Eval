@@ -76,8 +76,8 @@
       $form: $form,
       url: 'api/jump.php',
       submitOnBlur: !$form.find('input[type!=hidden][type!=submit]').filter(function(e){ return !!this.value }).length,
-    refreshPath: refreshPath,
-    enableFirstFocus: true,
+      enableFormRefreshOnSubmit: enableFormRefreshOnSubmit,
+      enableFirstFocus: true,
       successText: 'Saved!'
     }
     formSetup(options);

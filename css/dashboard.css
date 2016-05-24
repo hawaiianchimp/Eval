@@ -10,6 +10,10 @@ tr.clickable:hover {
   background-color: #9CC9F3 !important;
 }
 
+.table-responsive {
+    margin-bottom: 15px;
+}
+
 dl {
   width: 100%;
   overflow: hidden;

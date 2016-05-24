@@ -30,7 +30,7 @@
       $form: $form,
       url: 'api/delete.php',
       submitOnBlur: false,
-      refreshPath: refreshPath,
+      enableFormRefreshOnSubmit: enableFormRefreshOnSubmit,
       enableFirstFocus: false,
       successText: 'Deleted!'
     }

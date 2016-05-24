@@ -136,5 +136,7 @@
         },
       ]
     });
+    //default focus on search bar
+    $('input:first()').focus();
   });
 </script>

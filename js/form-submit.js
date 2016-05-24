@@ -1,8 +1,5 @@
 /*global $*/
-var refreshPath;
-
-// Default Focus
-$('input:first()').focus();
+var enableFormRefreshOnSubmit;
 
 function formSetup(options) {
   var $form = options.$form || $('form:first()');
@@ -11,6 +8,7 @@ function formSetup(options) {
   var submitOnBlur = options.submitOnBlur;
   var apiUrl = options.url;
   var enableFirstFocus = options.enableFirstFocus;
+  var enableFormRefreshOnSubmit = options.enableFormRefreshOnSubmit;
 
   if (!$form.length) {
     console.error('No $form provided in formSetup()', $form);
@@ -50,9 +48,9 @@ function formSetup(options) {
     $form.find('.form-group').removeClass('has-error').addClass('has-success');
     $form.find('.error').text('');
     $form.find('input[type=submit]').val(successText).removeClass('btn-primary').addClass('btn-success');
-    if(refreshPath){
+    if(enableFormRefreshOnSubmit){
       setTimeout(function() {
-        window.location = refreshPath;
+        window.location = window.location.href;
       }, 500);
     }
   }

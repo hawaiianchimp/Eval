@@ -21,6 +21,7 @@
       <div class="table-responsive">
         <?php include 'components/player-table-checkin.php' ?>
       </div>
+      <script> enableFormRefreshOnSubmit = true; </script>
       <div>
         <?php
           if ($player['firstname']) {

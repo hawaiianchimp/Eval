@@ -21,6 +21,7 @@
       <div class="table-responsive">
         <?php include 'components/player-table.php' ?>
       </div>
+      <script> enableFormRefreshOnSubmit = true; </script>
       <?php
         if ($player['firstname']) {
           include 'components/player-info.php';
