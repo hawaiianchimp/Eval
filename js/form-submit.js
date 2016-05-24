@@ -48,9 +48,9 @@ function formSetup(options) {
     $form.find('.form-group').removeClass('has-error').addClass('has-success');
     $form.find('.error').text('');
     $form.find('input[type=submit]').val(successText).removeClass('btn-primary').addClass('btn-success');
-    if(enableFormRefreshOnSubmit){
+    if (enableFormRefreshOnSubmit) {
       setTimeout(function() {
-        window.location = window.location.href;
+        window.location = window.location.pathname;
       }, 500);
     }
   }
