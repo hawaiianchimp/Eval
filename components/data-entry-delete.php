@@ -17,7 +17,7 @@
                     class="btn btn-lg btn-danger"
                     value="Delete">
           <span class="error help-block"></span>
-        </div>
+        </div>xw
       </div>
     </form>
   </div>
@@ -28,6 +28,6 @@ $(document).ready(function() {
   var $form = $('.form-delete');
   var submitOnBlur = false;
   var refreshPath = window.location.pathname;
-  formSetup($form, 'api/delete.php', submitOnBlur, refreshPath);
+  formSetup($form, 'api/delete.php', submitOnBlur, refreshPath, 'Deleted!');
 });
 </script>

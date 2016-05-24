@@ -19,38 +19,17 @@
 <table id="players-table" class="display responsive nowrap table table-compact table-striped">
   <thead>
     <tr>
-      <th>
-        <span>Bib#</span>
-      </th>
-      <th>
-        <span>Name</span>
-      </th>
-      <th>
-        <span>DOB</span>
-      </th>
-      <th>
-        <span>L-Age</span>
-      </th>
-      <th>
-        <span>Wt</span>
-      </th>
-      <th>
-        <span>Ht</span>
-      <th>
-        Spd
-      </th>
-      <th>
-        Jmp
-      </th>
-      <th>
-        Lp
-      </th>
-      <th>
-        PU
-      </th>
-      <th>
-        Stn5
-      </th>
+      <th><span>Bib#</span></th>
+      <th><span>Name</span></th>
+      <th><span>DOB</span></th>
+      <th><span>L-Age</span></th>
+      <th><span>Wt</span></th>
+      <th><span>Ht</span></th>
+      <th><span>Spd</span></th>
+      <th><span>Jmp</span></th>
+      <th><span>Lp</span></th>
+      <th><span>PU</span></th>
+      <th><span>Stn5</span></th>
     </tr>
   </thead>
   <tbody>

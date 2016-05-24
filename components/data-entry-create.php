@@ -64,6 +64,6 @@ $(document).ready(function() {
   var $form = $('.form-create');
   var submitOnBlur = false;
   var refreshPath = window.location.pathname;
-  formSetup($form, 'api/create.php', submitOnBlur, refreshPath);
+  formSetup($form, 'api/create.php', submitOnBlur, refreshPath, 'Created!');
 });
 </script>

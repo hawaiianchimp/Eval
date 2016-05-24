@@ -61,10 +61,6 @@ dd {
   margin-left: 20px;
 }
 
-.row {
-  margin-right: 0 !important;
-}
-
 table .selected {
   font-weight: bold;
 }

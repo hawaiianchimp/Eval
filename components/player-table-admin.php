@@ -18,35 +18,16 @@
 <table id="players-table" class="display responsive nowrap table table-compact table-striped">
   <thead>
     <tr>
-      <th>
-        <span>Bib#</span>
-      </th>
-      <th>
-        <span>Name</span>
-      </th>
-      <th>
-        <span>Age</span>
-      </th>
-      <th>
-        <span>Weight</span>
-      </th>
-      <th>
-        <span>Height</span>
-      <th>
-        Speed
-      </th>
-      <th>
-        Jump
-      </th>
-      <th>
-        Leap
-      </th>
-      <th>
-        Push Ups
-      </th>
-      <th>
-        Stn 5
-      </th>
+      <th><span>Bib#</span></th>
+      <th><span>Name</span></th>
+      <th><span>Age</span></th>
+      <th><span>Weight</span></th>
+      <th><span>Height</span></th>
+      <th><span>Speed</span></th>
+      <th><span>Jump</span></th>
+      <th><span>Leap</span></th>
+      <th><span>Push Ups</span></th>
+      <th><span>Stn 5</span></th>
     </tr>
   </thead>
   <tbody>
@@ -74,7 +55,10 @@
 <script>
   $(document).ready(function() {
     $datatable = $('#players-table').DataTable({
-      dom: '<f<t>>',
+      dom: 'B<f<t>>',
+      buttons: [
+          'copy', 'csv', 'excel', 'pdf', 'print'
+      ],
       responsive: true,
       paging: false,
       scrollY: "240px",

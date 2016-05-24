@@ -15,21 +15,21 @@
   }
 ?>
 
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-xs-12 main">
-        <h3 class="sub-header">Other<small> Entry</small></h3>
-        <div class="table-responsive">
-          <?php include 'components/player-table.php' ?>
-        </div>
-        <?php
-          if ($player['firstname']) {
-            include 'components/player-info.php';
-            include 'components/data-entry-stn.php';
-          }
-        ?>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-12 main">
+      <h3 class="sub-header">Other<small> Entry</small></h3>
+      <div class="table-responsive">
+        <?php include 'components/player-table.php' ?>
       </div>
+      <?php
+        if ($player['firstname']) {
+          include 'components/player-info.php';
+          include 'components/data-entry-stn.php';
+        }
+      ?>
     </div>
   </div>
+</div>
 
 <?php include 'inc/footer.php';?>

@@ -3,7 +3,11 @@
 // Default Focus
 $('input:first()').focus();
 
-function formSetup($form, apiUrl, submitOnBlur, refreshPath) {
+function formSetup($form, apiUrl, submitOnBlur, refreshPath, successText) {
+  var successText = successText || 'Saved!';
+  var submitOnBlur = submitOnBlur || true;
+  var refreshPath = refreshPath || window.location.pathname;
+
   if (!$form.length) {
     console.error('No $form provided in formSetup()', $form);
   }
@@ -39,7 +43,7 @@ function formSetup($form, apiUrl, submitOnBlur, refreshPath) {
     console.log(data);
     $form.find('.form-group').removeClass('has-error').addClass('has-success');
     $form.find('.error').text('');
-    $form.find('input[type=submit]').val('Saved!').removeClass('btn-primary').addClass('btn-success');
+    $form.find('input[type=submit]').val(successText).removeClass('btn-primary').addClass('btn-success');
     setTimeout(function() {
       window.location = refreshPath;
     }, 500);

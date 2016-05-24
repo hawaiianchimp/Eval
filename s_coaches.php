@@ -29,6 +29,7 @@
     }
   }
 ?>
+<div class="container-fluid">
   <div class="row">
     <div class="col-xs-12 main">
       <h3 class="sub-header">Coaches </h3>
@@ -45,4 +46,5 @@
       </div>
     </div>
   </div>
+</div>
 <?php include 'inc/footer.php';?>

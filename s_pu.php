@@ -14,7 +14,7 @@
     }
   }
 ?>
-
+<div class="container-fluid">
   <div class="row">
     <div class="col-xs-12 main">
       <h2 class="sub-header">Pushups<small> Entry</small></h2>
@@ -29,4 +29,5 @@
       ?>
     </div>
   </div>
+</div>
 <?php include 'inc/footer.php';?>
