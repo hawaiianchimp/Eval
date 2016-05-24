@@ -60,10 +60,16 @@
 </div>
 </div>
 <script>
-$(document).ready(function() {
-  var $form = $('.form-create');
-  var submitOnBlur = false;
-  var refreshPath = window.location.pathname;
-  formSetup($form, 'api/create.php', submitOnBlur, refreshPath, 'Created!');
-});
+  $(document).ready(function() {
+    var $form = $('.form-create');
+    var options = {
+      $form: $form,
+      url: 'api/create.php',
+      submitOnBlur: false,
+      refreshPath: refreshPath,
+      enableFirstFocus: false,
+      successText: 'Created!'
+    }
+    formSetup(options);
+  });
 </script>

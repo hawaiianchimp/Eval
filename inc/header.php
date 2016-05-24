@@ -6,7 +6,7 @@
     <title><?php echo TITLE ?></title>
     <!--<link rel="stylesheet" type="text/css" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">-->
     <!--<link rel="stylesheet" type="text/css" href="../bower_components/bootstrap/dist/css/bootstrap-theme.min.css">-->
-    <!--<link rel="stylesheet" type="text/css" href="../bower_components/font-awesome/css/font-awesome.min.css">-->
+    <link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
 
     <!-- DataTables CSS -->
     <!--<link href="../bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css" rel="stylesheet">-->
@@ -18,6 +18,7 @@
     <!--<script src="js/moment.min.js"></script>-->
 
     <!-- Form Submit -->
+    <script> var refreshPath = window.location.path; </script>
     <script src='js/datatables.min.js'></script>
     <script src='js/form-submit.js'></script>
 
@@ -34,6 +35,10 @@
 
     <link rel="stylesheet" type="text/css" href="css/datatables.min.css">
 
+
+
+
+    <!-- iOS app stuff -->
 
     <meta name="apple-mobile-web-app-capable"
           content="yes">

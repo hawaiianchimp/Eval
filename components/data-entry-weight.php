@@ -58,10 +58,14 @@
   </div>
 </div>
 <script>
-  $(document).ready(function() {
-    var $form = $('.form-weight');
-    var submitOnBlur = !$form.find('input[type!=hidden][type!=submit]').filter(function(e){ return !!this.value }).length;
-    var refreshPath = window.location.pathname;
-    formSetup($form, 'api/weight-and-height.php', submitOnBlur, refreshPath);
-  });
+  var $form = $('.form-weight');
+  var options = {
+    $form: $form,
+    url: 'api/weight-and-height.php',
+    submitOnBlur: !$form.find('input[type!=hidden][type!=submit]').filter(function(e){ return !!this.value }).length,
+    refreshPath: refreshPath,
+    enableFirstFocus: true,
+    successText: 'Saved!'
+  }
+  formSetup(options);
 </script>

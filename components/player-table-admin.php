@@ -55,7 +55,7 @@
 <script>
   $(document).ready(function() {
     $datatable = $('#players-table').DataTable({
-      dom: 'B<f<t>>',
+      dom: '<fB<t>>',
       buttons: [
           'copy', 'csv', 'excel', 'pdf', 'print'
       ],

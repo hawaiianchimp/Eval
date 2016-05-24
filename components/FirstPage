@@ -1,6 +1,0 @@
-<?php include 'inc/header.php' ?>
-<?php include 'inc/header-close.php' ?>
-<?php include 'inc/db.php' ?>
-
-
-<?php include 'inc/footer.php';?>

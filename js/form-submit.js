@@ -3,16 +3,21 @@
 // Default Focus
 $('input:first()').focus();
 
-function formSetup($form, apiUrl, submitOnBlur, refreshPath, successText) {
-  var successText = successText || 'Saved!';
-  var submitOnBlur = submitOnBlur || true;
-  var refreshPath = refreshPath || window.location.pathname;
+function formSetup(options) {
+  var $form = options.$form || $('form:first()');
+  var successText = options.successText || 'Saved!';
+  var refreshPath = options.refreshPath || window.location.pathname;
+  var submitOnBlur = options.submitOnBlur;
+  var apiUrl = options.url;
+  var enableFirstFocus = options.enableFirstFocus;
 
   if (!$form.length) {
     console.error('No $form provided in formSetup()', $form);
   }
   // Default Focus in form
-  $form.find('input:first()').focus();
+  if (enableFirstFocus) {
+    $form.find('input[type!=hidden][type!=submit]:first()').focus();
+  }
 
   // Submit when unfocusing on input
   if(submitOnBlur) {

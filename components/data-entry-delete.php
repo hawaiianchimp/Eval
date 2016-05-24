@@ -24,10 +24,16 @@
 </div>
 </div>
 <script>
-$(document).ready(function() {
-  var $form = $('.form-delete');
-  var submitOnBlur = false;
-  var refreshPath = window.location.pathname;
-  formSetup($form, 'api/delete.php', submitOnBlur, refreshPath, 'Deleted!');
-});
+  $(document).ready(function() {
+    var $form = $('.form-delete');
+    var options = {
+      $form: $form,
+      url: 'api/delete.php',
+      submitOnBlur: false,
+      refreshPath: refreshPath,
+      enableFirstFocus: false,
+      successText: 'Deleted!'
+    }
+    formSetup(options);
+  });
 </script>

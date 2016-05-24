@@ -36,10 +36,14 @@
   </div>
 </div>
 <script>
-  $(document).ready(function() {
-    var $form = $('.form-stn');
-    var submitOnBlur = !$form.find('input[type!=hidden][type!=submit]').filter(function(e){ return !!this.value }).length;
-    var refreshPath = window.location.pathname;
-    formSetup($form, 'api/stn.php', submitOnBlur, refreshPath);
-  });
+  var $form = $('.form-stn');
+  var options = {
+    $form: $form,
+    url: 'api/stn.php',
+    submitOnBlur: false,
+    refreshPath: refreshPath,
+    enableFirstFocus: true,
+    successText: 'Saved!'
+  }
+  formSetup(options);
 </script>

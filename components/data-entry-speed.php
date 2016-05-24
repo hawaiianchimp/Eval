@@ -52,10 +52,14 @@
   </div>
 </div>
 <script>
-  $(document).ready(function() {
-    var $form = $('.form-spd1');
-    var submitOnBlur = !$form.find('input[type!=hidden][type!=submit]').filter(function(e){ return !!this.value }).length;
-    var refreshPath = window.location.pathname;
-    formSetup($form, 'api/speed.php', submitOnBlur, refreshPath);
-  });
+  var $form = $('.form-spd1');
+  var options = {
+    $form: $form,
+    url: 'api/speed.php',
+    submitOnBlur: !$form.find('input[type!=hidden][type!=submit]').filter(function(e){ return !!this.value }).length,
+    refreshPath: refreshPath,
+    enableFirstFocus: true,
+    successText: 'Saved!'
+  }
+  formSetup(options);
 </script>

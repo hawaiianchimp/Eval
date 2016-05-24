@@ -71,7 +71,15 @@
 </div>
 <script>
   $(document).ready(function() {
-    var submitOnBlur = true;
-    formSetup($('.form-jmp1'), 'api/jump.php', submitOnBlur);
+    var $form = $('.form-jmp1');
+    var options = {
+      $form: $form,
+      url: 'api/jump.php',
+      submitOnBlur: !$form.find('input[type!=hidden][type!=submit]').filter(function(e){ return !!this.value }).length,
+    refreshPath: refreshPath,
+    enableFirstFocus: true,
+      successText: 'Saved!'
+    }
+    formSetup(options);
   });
 </script>

@@ -36,10 +36,14 @@
   </div>
 </div>
 <script>
-  $(document).ready(function() {
-    var $form = $('.form-pu');
-    var submitOnBlur = !$form.find('input[type!=hidden][type!=submit]').filter(function(e){ return !!this.value }).length;
-    var refreshPath = window.location.pathname;
-    formSetup($form, 'api/pu.php', submitOnBlur, refreshPath);
-  });
+  var $form = $('.form-pu');
+  var options = {
+    $form: $form,
+    url: 'api/pu.php',
+    submitOnBlur: !$form.find('input[type!=hidden][type!=submit]').filter(function(e){ return !!this.value }).length,
+    refreshPath: refreshPath,
+    enableFirstFocus: true,
+    successText: 'Saved!'
+  }
+  formSetup(options);
 </script>

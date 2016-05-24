@@ -22,6 +22,7 @@
         <?php include 'components/player-table-admin.php' ?>
       </div>
       <div>
+        <script> refreshPath = window.location.pathname + window.location.search; </script>
         <?php
           if ($player['firstname']) {
             include 'components/player-info-checkin.php';
