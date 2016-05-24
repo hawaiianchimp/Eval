@@ -38,7 +38,7 @@ if ($error->count === 0) {
   if ($mysqli->query($sql) === true) {
     http_response_code(200);
     $output->status = http_response_code();
-    $output->message = 'Update Successful';
+    $output->message = 'Create Successful';
     echo json_encode($output);
   } else {
     http_response_code(400);

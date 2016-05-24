@@ -1,15 +1,3 @@
-<?php
-  $sql = "SELECT * FROM players
-          WHERE id = ".$_GET['pid'];
-  $player = array();
-  if (!$result = $mysqli->query($sql)) {
-    console('Players: '.$mysqli->connect_errno, 'error');
-    console('Players: '.$mysqli->connect_error, 'error');
-  } else {
-    $player = $result->fetch_assoc();
-  }
-?>
-
 <div class="col-xs-12 col-md-6">
   <div class="panel panel-default">
     <div class="panel-heading">
@@ -71,7 +59,9 @@
 </div>
 <script>
   $(document).ready(function() {
-    var submitOnBlur = true;
-    formSetup($('.form-lp1'), 'api/leap.php', submitOnBlur);
+    var $form = $('.form-lp1');
+    var submitOnBlur = !$form.find('input[type!=hidden][type!=submit]').filter(function(e){ return !!this.value }).length;
+    var refreshPath = window.location.pathname;
+    formSetup($form, 'api/leap.php', submitOnBlur, refreshPath);
   });
 </script>

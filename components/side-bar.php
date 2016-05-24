@@ -22,7 +22,7 @@
             <a href="s_other.php"><i class="fa fa-fw fa-dashboard"></i> Other</a>
         </li>
         <li class="<?php echo (strpos($_SERVER['REQUEST_URI'],'/s_coaches.php') !== false) ? 'active':''?>">
-            <a href="s_coaches.php"><i class="fa fa-fw fa-dashboard"></i> Coaches</a>
+            <a href="s_coaches.org.php"><i class="fa fa-fw fa-dashboard"></i> Coaches</a>
         </li>
     </ul>
 </div>

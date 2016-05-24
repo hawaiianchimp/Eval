@@ -54,7 +54,7 @@
       foreach($players as $person) { ?>
         <a>
           <tr onclick="window.document.location='?pid=<?php echo $person['id'] ?>'"
-              class="clickable <?php echo ($pid === $person['id']) ? 'warning':''?>">
+              class="clickable <?php echo ($pid === $person['id']) ? 'info selected':''?>">
             <td><?php echo tripleDigit($person['bib']) ?></td>
             <td><?php echo $person['lastname'].', '.$person['firstname'] ?></td>
             <td><?php echo $person['age'] ?: '' ?></td>

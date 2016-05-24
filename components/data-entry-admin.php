@@ -1,15 +1,3 @@
-<?php
-  $sql = "SELECT * FROM players
-          WHERE id = ".$_GET['pid'];
-  $player = array();
-  if (!$result = $mysqli->query($sql)) {
-    console('Players: '.$mysqli->connect_errno, 'error');
-    console('Players: '.$mysqli->connect_error, 'error');
-  } else {
-    $player = $result->fetch_assoc();
-  }
-?>
-
 <div class="col-xs-12 col-md-6">
   <div class="panel panel-default">
     <div class="panel-heading">
@@ -51,7 +39,9 @@
 </div>
 <script>
 $(document).ready(function() {
+  var $form = $('.form-bib');
   var submitOnBlur = true;
-  formSetup($('.form-bib'), 'api/bib.php', submitOnBlur);
+  var refreshPath = window.location.pathname + window.location.search;
+  formSetup($form, 'api/bib.php', submitOnBlur, refreshPath);
 });
 </script>

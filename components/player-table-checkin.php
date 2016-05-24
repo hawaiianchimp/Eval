@@ -55,21 +55,21 @@
   </thead>
   <tbody>
     <?php
-      foreach($players as $player) { ?>
+      foreach($players as $person) { ?>
         <a>
-          <tr onclick="window.document.location='?pid=<?php echo $player['id'] ?>'"
-              class="clickable <?php echo ($pid === $player['id']) ? 'warning':''?>">
-            <td><?php echo $player['bib']  ?: '' ?></td>
-            <td><?php echo $player['lastname'].', '.$player['firstname'] ?></td>
-            <td><?php echo $player['birthday']  ?: '' ?></td>
-            <td><?php echo $player['age']  ?: '' ?></td>
-            <td><?php echo round($player['weight'])  ?: '' ?></td>
-            <td><?php echo round($player['height'])  ?: '' ?></td>
-            <td><?php echo round($player['speed'],1)  ?: '' ?></td>
-            <td><?php echo round($player['jump'],1)  ?: '' ?></td>
-            <td><?php echo round($player['leap'],1)  ?: '' ?></td>
-            <td><?php echo round($player['pu'])  ?: '' ?></td>
-            <td><?php echo round($player['stn'])  ?: '' ?></td>
+          <tr onclick="window.document.location='?pid=<?php echo $person['id'] ?>'"
+              class="clickable <?php echo ($pid === $person['id']) ? 'info selected':''?>">
+            <td><?php echo $person['bib']  ?: '' ?></td>
+            <td><?php echo $person['lastname'].', '.$person['firstname'] ?></td>
+            <td><?php echo $person['birthday']  ?: '' ?></td>
+            <td><?php echo $person['age']  ?: '' ?></td>
+            <td><?php echo round($person['weight'])  ?: '' ?></td>
+            <td><?php echo round($person['height'])  ?: '' ?></td>
+            <td><?php echo round($person['speed'],1)  ?: '' ?></td>
+            <td><?php echo round($person['jump'],1)  ?: '' ?></td>
+            <td><?php echo round($person['leap'],1)  ?: '' ?></td>
+            <td><?php echo round($person['pu'])  ?: '' ?></td>
+            <td><?php echo round($person['stn'])  ?: '' ?></td>
           </tr>
         </a>
     <?php } ?>

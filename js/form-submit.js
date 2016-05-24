@@ -1,10 +1,14 @@
 /*global $*/
-function formSetup($form, apiUrl, submitOnBlur) {
+
+// Default Focus
+$('input:first()').focus();
+
+function formSetup($form, apiUrl, submitOnBlur, refreshPath) {
   if (!$form.length) {
     console.error('No $form provided in formSetup()', $form);
   }
-  // Default Focus
-  $('input:first()').focus();
+  // Default Focus in form
+  $form.find('input:first()').focus();
 
   // Submit when unfocusing on input
   if(submitOnBlur) {
@@ -37,7 +41,7 @@ function formSetup($form, apiUrl, submitOnBlur) {
     $form.find('.error').text('');
     $form.find('input[type=submit]').val('Saved!').removeClass('btn-primary').addClass('btn-success');
     setTimeout(function() {
-      window.location = window.location.pathname + window.location.search;
+      window.location = refreshPath;
     }, 500);
   }
 

@@ -1,25 +1,25 @@
 <div class="col-xs-12 col-md-6">
   <div class="panel panel-default">
     <div class="panel-heading">
-      <h4>Edit Pushups</h4>
+      <h4>BURPEES</h4>
     </div>
     <div class="panel-body">
-      <form class="form form-pu">
+      <form class="form form-stn">
         <input name="pid"
               type="hidden"
               value="<?php echo $_GET['pid'] ?>">
         <div class="form-group col-xs-12">
-          <label for='pu'>Pushups</label>
+          <label for='stn'>Burpee Count</label>
           <div class="input-group input-group-lg">
-            <input name="pu"
+            <input name="stn"
                     onfocus="this.select();"
                     onmouseup="return false;"
                     type="number"
                     step="1"
                     pattern="\d*"
                     class="form-control"
-                    value="<?php echo $player['pu'] ?>"
-                    placeholder="<?php echo $player['pu'] ?>"
+                    value="<?php echo $player['stn'] ?>"
+                    placeholder="<?php echo $player['stn'] ?>"
                     aria-describedby="sizing-addon1">
             <span class="input-group-addon" id="sizing-addon1">cnt</span>
           </div>
@@ -37,9 +37,9 @@
 </div>
 <script>
   $(document).ready(function() {
-    var $form = $('.form-pu');
+    var $form = $('.form-stn');
     var submitOnBlur = !$form.find('input[type!=hidden][type!=submit]').filter(function(e){ return !!this.value }).length;
     var refreshPath = window.location.pathname;
-    formSetup($form, 'api/pu.php', submitOnBlur, refreshPath);
+    formSetup($form, 'api/stn.php', submitOnBlur, refreshPath);
   });
 </script>

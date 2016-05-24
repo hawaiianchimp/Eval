@@ -55,7 +55,7 @@
       foreach($players as $person) { ?>
         <a>
           <tr onclick="window.document.location='?pid=<?php echo $person['id'] ?>'"
-              class="clickable <?php echo ($pid === $person['id']) ? 'warning':''?>">
+              class="clickable <?php echo ($pid === $person['id']) ? 'info selected':''?>">
             <td><?php echo tripleDigit($person['bib']) ?></td>
             <td><?php echo $person['lastname'].', '.$person['firstname'] ?></td>
             <td><?php echo $person['age'] ?: '' ?></td>
@@ -86,43 +86,53 @@
       columns: [
         {
           name: 'bib',
-          searchable: true
+          searchable: true,
+          responsivePriority: 1
         },
         {
           name: 'full-name',
-          searchable: true
+          searchable: true,
+          responsivePriority: 2
         },
         {
           name: 'age',
-          searchable: true
+          searchable: true,
+          responsivePriority: 3
         },
         {
           name: 'weight',
-          searchable: false
+          searchable: false,
+          responsivePriority: 3
         },
         {
           name: 'height',
-          searchable: false
+          searchable: false,
+          responsivePriority: 3
         },
         {
           name: 'speed',
-          searchable: false
+          searchable: false,
+          responsivePriority: 3
         },
         {
           name: 'jump',
-          searchable: false
+          searchable: false,
+          responsivePriority: 3
         },
         {
           name: 'leap',
-          searchable: false
+          searchable: false,
+          responsivePriority: 3
         },
         {
           name: 'pushups',
-          searchable: false
+          searchable: false,
+          responsivePriority: 3
         },
         {
           name: 'stn-5',
-          searchable: false
+          searchable: false,
+          responsivePriority: 3
         },
       ]
     });
