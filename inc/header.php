@@ -29,7 +29,7 @@
 
 
     <!--<link rel="stylesheet" type="text/css" href="css/cover.css">-->
-    <!--<link rel="stylesheet" type="text/css" href="css/dashboard.css">-->
+    <link rel="stylesheet" type="text/css" href="css/dashboard.css">
     <!--<link rel="stylesheet" type="text/css" href="css/sb-admin.css">-->
 
     <link rel="stylesheet" type="text/css" href="css/datatables.min.css">
