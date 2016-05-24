@@ -16,7 +16,7 @@ function formSetup($form, apiUrl, submitOnBlur) {
   }
 
   // Submit on save key pressed
-  $form.find('input[name="save"]').click(function(e) {
+  $form.find('input[type=submit]').click(function(e) {
     e.preventDefault();
     submitForm($form, apiUrl, successHandler, errorHandler);
     return false;
@@ -35,7 +35,7 @@ function formSetup($form, apiUrl, submitOnBlur) {
     console.log(data);
     $form.find('.form-group').removeClass('has-error').addClass('has-success');
     $form.find('.error').text('');
-    $form.find('input[name="save"]').val('Saved!').removeClass('btn-primary').addClass('btn-success');
+    $form.find('input[type=submit]').val('Saved!').removeClass('btn-primary').addClass('btn-success');
     setTimeout(function() {
       window.location = window.location.pathname + window.location.search;
     }, 500);
@@ -46,7 +46,7 @@ function formSetup($form, apiUrl, submitOnBlur) {
     console.log(data);
     console.log(status);
     console.log(error);
-    $form.find('input[name="save"]').val('Save').removeClass('btn-success').addClass('btn-primary');
+    $form.find('input[type=submit]').val('Save').removeClass('btn-success').addClass('btn-primary');
     $form.find('.form-group').removeClass('has-success').addClass('has-error');
     $form.find('.error').text(data && data.error && data.error.message);
   }

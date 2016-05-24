@@ -13,6 +13,7 @@
             include 'components/player-info-checkin.php';
             include 'components/data-entry-bib.php';
           }
+          include 'components/data-entry-create.php';
         ?>
       </div>
     </div>

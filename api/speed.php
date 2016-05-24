@@ -2,9 +2,9 @@
 
 include '../inc/db.php';
 
-$spd1 = mysql_real_escape_string(round($_GET['spd1'], 1));
-$spd2 = mysql_real_escape_string(round($_GET['spd2'], 1));
-$pid = mysql_real_escape_string($_GET['pid']);
+$spd1 = $mysqli->real_escape_string(round($_GET['spd1'], 1));
+$spd2 = $mysqli->real_escape_string(round($_GET['spd2'], 1));
+$pid = $mysqli->real_escape_string($_GET['pid']);
 $output = new stdClass();
 $error = new stdClass();
 $error->count = 0;

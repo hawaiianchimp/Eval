@@ -5,7 +5,7 @@
     <div class="col-xs-12 main">
       <h3 class="sub-header">Admin</h3>
       <div class="table-responsive">
-        <?php include 'components/player-table.php' ?>
+        <?php include 'components/player-table-admin.php' ?>
       </div>
       <div>
         <?php

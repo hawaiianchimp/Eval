@@ -1,8 +1,8 @@
 <?php
 
 define('IPADDRESS', getenv('IP'));
-define('USERNAME', getenv('C9_USER'));
-define('PASSWORD', '');
+define('USERNAME', 'username');
+define('PASSWORD', 'password');
 define('DATABASE', 'c9');
 
 ?>

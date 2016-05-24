@@ -2,8 +2,7 @@
   $pid = $_GET['pid'];
 
   $sql = "SELECT *
-          FROM players
-          WHERE bib IS NOT NULL";
+          FROM players";
 
   $players = array();
   if (!$result = $mysqli->query($sql)) {

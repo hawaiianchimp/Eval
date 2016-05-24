@@ -19,36 +19,36 @@
 <table id="players-table" class="display responsive nowrap table table-compact table-striped">
   <thead>
     <tr>
-      <th align="center">
+      <th>
         <span>Bib#</span>
       </th>
       <th>
         <span>Name</span>
       </th>
-      <th align="center">
+      <th>
         <span>DOB</span>
       </th>
-      <th align="center">
+      <th>
         <span>L-Age</span>
       </th>
-      <th align="center">
+      <th>
         <span>Wt</span>
       </th>
-      <th align="center">
+      <th>
         <span>Ht</span>
-      <th align="center">
+      <th>
         Spd
       </th>
-      <th align="center">
+      <th>
         Jmp
       </th>
-      <th align="center">
+      <th>
         Lp
       </th>
-      <th align="center">
+      <th>
         PU
       </th>
-      <th align="center">
+      <th>
         Stn5
       </th>
     </tr>
@@ -59,17 +59,17 @@
         <a>
           <tr onclick="window.document.location='?pid=<?php echo $player['id'] ?>'"
               class="clickable <?php echo ($pid === $player['id']) ? 'warning':''?>">
-            <td align="center"><?php echo $player['bib']  ?: '' ?></td>
+            <td><?php echo $player['bib']  ?: '' ?></td>
             <td><?php echo $player['lastname'].', '.$player['firstname'] ?></td>
-            <td align="center"><?php echo $player['birthday']  ?: '' ?></td>
-            <td align="center"><?php echo $player['age']  ?: '' ?></td>
-            <td align="center"><?php echo round($player['weight'])  ?: '' ?></td>
-            <td align="center"><?php echo round($player['height'])  ?: '' ?></td>
-            <td align="center"><?php echo round($player['speed'],1)  ?: '' ?></td>
-            <td align="center"><?php echo round($player['jump'],1)  ?: '' ?></td>
-            <td align="center"><?php echo round($player['leap'],1)  ?: '' ?></td>
-            <td align="center"><?php echo round($player['pu'])  ?: '' ?></td>
-            <td align="center"><?php echo round($player['stn'])  ?: '' ?></td>
+            <td><?php echo $player['birthday']  ?: '' ?></td>
+            <td><?php echo $player['age']  ?: '' ?></td>
+            <td><?php echo round($player['weight'])  ?: '' ?></td>
+            <td><?php echo round($player['height'])  ?: '' ?></td>
+            <td><?php echo round($player['speed'],1)  ?: '' ?></td>
+            <td><?php echo round($player['jump'],1)  ?: '' ?></td>
+            <td><?php echo round($player['leap'],1)  ?: '' ?></td>
+            <td><?php echo round($player['pu'])  ?: '' ?></td>
+            <td><?php echo round($player['stn'])  ?: '' ?></td>
           </tr>
         </a>
     <?php } ?>

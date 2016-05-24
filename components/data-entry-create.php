@@ -25,7 +25,6 @@
                     onfocus="this.select();"
                     onmouseup="return false;"
                     placeholder="first name">
-          <span class="error help-block"></span>
         </div>
         <div class="form-group col-xs-12">
           <label for='lastname'>Last Name</label>
@@ -35,17 +34,15 @@
                     onfocus="this.select();"
                     onmouseup="return false;"
                     placeholder="last name">
-          <span class="error help-block"></span>
         </div>
         <div class="form-group col-xs-12">
-          <label for='birthdate'>Birthdate</label>
-            <input name="birthdate"
+          <label for='birthday'>birthday</label>
+            <input name="birthday"
                     type="date"
                     class="form-control input-lg"
                     onfocus="this.select();"
                     onmouseup="return false;"
-                    placeholder="birthdate">
-          <span class="error help-block"></span>
+                    placeholder="birthday">
         </div>
         <div class="form-group col-xs-12">
           <label for='age'>Leage Age</label>
@@ -61,13 +58,13 @@
                     aria-describedby="sizing-addon-years">
             <span class="input-group-addon" id="sizing-addon-years">years</span>
           </div>
-          <span class="error help-block"></span>
         </div>
         <div class="form-group col-xs-12">
           <input name="create"
                     type="submit"
                     class="btn btn-lg btn-primary"
                     value="Create">
+          <span class="error help-block"></span>
         </div>
       </div>
     </form>

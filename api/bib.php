@@ -2,8 +2,8 @@
 
 include '../inc/db.php';
 
-$bib = mysql_real_escape_string($_GET['bib']);
-$pid = mysql_real_escape_string($_GET['pid']);
+$bib = $mysqli->real_escape_string($_GET['bib']);
+$pid = $mysqli->real_escape_string($_GET['pid']);
 $output = new stdClass();
 $error = new stdClass();
 $error->count = 0;

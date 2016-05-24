@@ -2,32 +2,38 @@
 
 include '../inc/db.php';
 
-$firstname = mysql_real_escape_string($_GET['firstname']);
-$lastname = mysql_real_escape_string($_GET['lastname']);
-$birthdate = mysql_real_escape_string($_GET['birthdate']);
-$age = mysql_real_escape_string($_GET['age']);
+$firstname = $mysqli->real_escape_string($_GET['firstname']);
+$lastname = $mysqli->real_escape_string($_GET['lastname']);
+$birthday = $mysqli->real_escape_string($_GET['birthday']);
+$age = $mysqli->real_escape_string($_GET['age']);
 
 $output = new stdClass();
 $error = new stdClass();
 $error->count = 0;
 
 if (!$firstname) {
-  $error->message = 'First name is required';
+  $error->message .= 'First name is required. ';
   $error->count++;
-} else if (!$lastname) {
-  $error->message = 'Last name is required';
+}
+
+if (!$lastname) {
+  $error->message .= 'Last name is required. ';
   $error->count++;
-} else if (!$birthdate) {
-  $error->message = 'Birthdate is required';
+}
+
+if (!$birthday) {
+  $error->message .= 'Birthday is required. ';
   $error->count++;
-} else if (!$age) {
-  $error->message = 'Age is required';
+}
+
+if (!$age) {
+  $error->message .= 'Age is required. ';
   $error->count++;
 }
 
 if ($error->count === 0) {
-  $sql = 'INSERT INTO players (firstname, lastname, birthdate, age)
-        VALUES ('.$firstname.', '.$lastname.', '.$birthdate.', '.$age.');';
+  $sql = 'INSERT INTO players (firstname, lastname, birthday, age)
+        VALUES ("'.$firstname.'", "'.$lastname.'", "'.$birthday.'", "'.$age.'");';
 
   if ($mysqli->query($sql) === true) {
     http_response_code(200);

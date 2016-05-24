@@ -2,8 +2,8 @@
 
 include '../inc/db.php';
 
-$weight = mysql_real_escape_string(@round($_GET['weight']));
-$height = mysql_real_escape_string(@round($_GET['height']));
+$weight = $mysqli->real_escape_string(@round($_GET['weight']));
+$height = $mysqli->real_escape_string(@round($_GET['height']));
 $pid = $_GET['pid'];
 $output = new stdClass();
 $error = new stdClass();
