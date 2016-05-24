@@ -10,7 +10,9 @@
     console('Players: '.$mysqli->connect_errno, 'error');
     console('Players: '.$mysqli->connect_error, 'error');
   } else {
-    $players = $result->fetch_all(MYSQLI_ASSOC);
+    while ($row = $result->fetch_assoc()) {
+      array_push($players, $row);
+    }
   }
 ?>
 

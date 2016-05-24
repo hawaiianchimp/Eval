@@ -1,3 +1,4 @@
 node_modules
 escan
 npm-debug.log
+inc/passwords.php

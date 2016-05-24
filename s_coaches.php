@@ -12,12 +12,14 @@
       <div class="table-responsive">
         <?php include 'components/player-table.php' ?>
       </div>
+      <div>
       <?php
         if ($_GET['pid']) {
-          include 'components/data-view-coaches.php';
+          include 'components/player-info.php';
+          include 'components/player-data.php';
         }
       ?>
-
+      </div>
     </div>
   </div>
 <?php include 'inc/footer.php';?>

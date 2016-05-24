@@ -2,9 +2,9 @@
 
 include '../inc/db.php';
 
-$pu = $_GET['pu'];
-$pu2 = $_GET['pu2'];
-$pid = $_GET['pid'];
+$pu = mysql_real_escape_string($_GET['pu']);
+$pu2 = mysql_real_escape_string($_GET['pu2']);
+$pid = mysql_real_escape_string($_GET['pid']);
 $output = new stdClass();
 $error = new stdClass();
 $error->count = 0;

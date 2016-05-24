@@ -2,8 +2,8 @@
 
 include '../inc/db.php';
 
-$lp1 = @round($_GET['lp1'], 1);
-$lp2 = @round($_GET['lp2'], 1);
+$lp1 = mysql_real_escape_string(@round($_GET['lp1'], 1));
+$lp2 = mysql_real_escape_string(@round($_GET['lp2'], 1));
 $pid = $_GET['pid'];
 $output = new stdClass();
 $error = new stdClass();

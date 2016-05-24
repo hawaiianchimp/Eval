@@ -10,7 +10,9 @@
     console('Players: '.$mysqli->connect_errno, 'error');
     console('Players: '.$mysqli->connect_error, 'error');
   } else {
-    $players = $result->fetch_all(MYSQLI_ASSOC);
+    while ($row = $result->fetch_assoc()) {
+      array_push($players, $row);
+    }
   }
 ?>
 
@@ -50,20 +52,20 @@
   </thead>
   <tbody>
     <?php
-      foreach($players as $player) { ?>
+      foreach($players as $person) { ?>
         <a>
-          <tr onclick="window.document.location='?pid=<?php echo $player['id'] ?>'"
-              class="clickable <?php echo ($pid === $player['id']) ? 'warning':''?>">
-            <td align="center"><?php echo tripleDigit($player['bib']) ?></td>
-            <td><?php echo $player['lastname'].', '.$player['firstname'] ?></td>
-            <td align="center"><?php echo $player['age'] ?: '' ?></td>
-            <td align="center"><?php echo round($player['weight']) ?: '' ?></td>
-            <td align="center"><?php echo round($player['height']) ?: '' ?></td>
-            <td align="center"><?php echo round($player['speed'],1) ?: '' ?></td>
-            <td align="center"><?php echo round($player['jump'],1) ?: '' ?></td>
-            <td align="center"><?php echo round($player['leap'],1) ?: '' ?></td>
-            <td align="center"><?php echo round($player['pu']) ?: '' ?></td>
-            <td align="center"><?php echo round($player['stn']) ?: '' ?></td>
+          <tr onclick="window.document.location='?pid=<?php echo $person['id'] ?>'"
+              class="clickable <?php echo ($pid === $person['id']) ? 'warning':''?>">
+            <td align="center"><?php echo tripleDigit($person['bib']) ?></td>
+            <td><?php echo $person['lastname'].', '.$person['firstname'] ?></td>
+            <td align="center"><?php echo $person['age'] ?: '' ?></td>
+            <td align="center"><?php echo round($person['weight']) ?: '' ?></td>
+            <td align="center"><?php echo round($person['height']) ?: '' ?></td>
+            <td align="center"><?php echo round($person['speed'],1) ?: '' ?></td>
+            <td align="center"><?php echo round($person['jump'],1) ?: '' ?></td>
+            <td align="center"><?php echo round($person['leap'],1) ?: '' ?></td>
+            <td align="center"><?php echo round($person['pu']) ?: '' ?></td>
+            <td align="center"><?php echo round($person['stn']) ?: '' ?></td>
           </tr>
         </a>
     <?php } ?>
@@ -73,14 +75,56 @@
 <script>
   $(document).ready(function() {
     $datatable = $('#players-table').DataTable({
-        dom: '<f<t>>',
-        responsive: true,
-        paging: false,
-        scrollY: "240px",
-        scrollCollapse: true,
-        tabIndex: -1,
-        colReorder: true,
-        order: [[0, 'asc']]
+      dom: '<f<t>>',
+      responsive: true,
+      paging: false,
+      scrollY: "240px",
+      scrollCollapse: true,
+      tabIndex: -1,
+      colReorder: true,
+      order: [[0, 'asc']],
+      columns: [
+        {
+          name: 'bib',
+          searchable: true
+        },
+        {
+          name: 'full-name',
+          searchable: true
+        },
+        {
+          name: 'age',
+          searchable: true
+        },
+        {
+          name: 'weight',
+          searchable: false
+        },
+        {
+          name: 'height',
+          searchable: false
+        },
+        {
+          name: 'speed',
+          searchable: false
+        },
+        {
+          name: 'jump',
+          searchable: false
+        },
+        {
+          name: 'leap',
+          searchable: false
+        },
+        {
+          name: 'pushups',
+          searchable: false
+        },
+        {
+          name: 'stn-5',
+          searchable: false
+        },
+      ]
     });
   });
 </script>

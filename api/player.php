@@ -2,36 +2,37 @@
 
 include '../inc/db.php';
 
-$bib = mysql_real_escape_string($_GET['bib']);
-$pid = mysql_real_escape_string($_GET['pid']);
+$firstname = mysql_real_escape_string($_GET['firstname']);
+$lastname = mysql_real_escape_string($_GET['lastname']);
+$birthdate = mysql_real_escape_string($_GET['birthdate']);
+$age = mysql_real_escape_string($_GET['age']);
+
 $output = new stdClass();
 $error = new stdClass();
 $error->count = 0;
 
-if (!$pid) {
-  $error->message = "No player id provided";
+if (!$firstname) {
+  $error->message = 'First name is required';
   $error->count++;
-} else if (!is_numeric($pid)) {
-  $error->message = "Player id needs to be a number";
+} else if (!$lastname) {
+  $error->message = 'Last name is required';
   $error->count++;
-} else if (!$bib) {
-  $error->message = "No bib provided";
+} else if (!$birthdate) {
+  $error->message = 'Birthdate is required';
   $error->count++;
-} else if (!is_numeric($bib) || $bib <= 0) {
-  $error->message = "bib need to be numbers";
+} else if (!$age) {
+  $error->message = 'Age is required';
   $error->count++;
 }
 
 if ($error->count === 0) {
-  $sql = "UPDATE players
-        SET bib = '".$bib."',
-        bib_update = NOW()
-        WHERE id = ".$pid;
+  $sql = 'INSERT INTO players (firstname, lastname, birthdate, age)
+        VALUES ('.$firstname.', '.$lastname.', '.$birthdate.', '.$age.');';
 
   if ($mysqli->query($sql) === true) {
     http_response_code(200);
     $output->status = http_response_code();
-    $output->message = "Update Successful";
+    $output->message = 'Update Successful';
     echo json_encode($output);
   } else {
     http_response_code(400);

@@ -13,7 +13,10 @@ if (!$result = $mysqli->query($sql)) {
   console('No rows found', 'error');
   $output->error = 'No Rows';
 } else {
-  $players = $result->fetch_all(MYSQLI_ASSOC);
+  $players = array();
+  while ($row = $result->fetch_assoc()) {
+    array_push($players, $row);
+  }
   $output->data = $players;
 }
 

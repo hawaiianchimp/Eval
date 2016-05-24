@@ -7,11 +7,14 @@
       <div class="table-responsive">
         <?php include 'components/player-table-checkin.php' ?>
       </div>
-      <?php
-        if ($_GET['pid']) {
-          include 'components/data-entry-bib.php';
-        }
-      ?>
+      <div>
+        <?php
+          if ($_GET['pid']) {
+            include 'components/player-info-checkin.php';
+            include 'components/data-entry-bib.php';
+          }
+        ?>
+      </div>
     </div>
   </div>
 <?php include 'inc/footer.php';?>

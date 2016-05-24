@@ -1,17 +1,19 @@
 /*global $*/
-function formSetup($form, apiUrl) {
+function formSetup($form, apiUrl, submitOnBlur) {
   if (!$form.length) {
     console.error('No $form provided in formSetup()', $form);
   }
   // Default Focus
-  $form.find('input[type=number]:first()').focus();
+  $('input:first()').focus();
 
   // Submit when unfocusing on input
-  $form.find('input').blur(function(e) {
-    e.preventDefault();
-    submitForm($form, apiUrl);
-    return false;
-  });
+  if(submitOnBlur) {
+    $form.find('input').blur(function(e) {
+      e.preventDefault();
+      submitForm($form, apiUrl);
+      return false;
+    });
+  }
 
   // Submit on save key pressed
   $form.find('input[name="save"]').click(function(e) {
@@ -34,8 +36,8 @@ function formSetup($form, apiUrl) {
     $form.find('.form-group').removeClass('has-error').addClass('has-success');
     $form.find('.error').text('');
     $form.find('input[name="save"]').val('Saved!').removeClass('btn-primary').addClass('btn-success');
-    setTimeout(function(){
-      window.location = window.location.pathname;
+    setTimeout(function() {
+      window.location = window.location.pathname + window.location.search;
     }, 500);
   }
 
@@ -49,19 +51,24 @@ function formSetup($form, apiUrl) {
     $form.find('.error').text(data && data.error && data.error.message);
   }
 
-  function submitForm(form, url, success, error) {
-    form.submit(function (e) {
+  function submitForm($form, url, success, error) {
+    $form.submit(function (e) {
       e.preventDefault();
       $.ajax({
         url: url,
         dataType: 'json',
         method: 'GET',
         data: $(this).serialize(),
-        success: success,
+        success: function(data) {
+          console.info($form.attr('class') + " successfully submitted", data);
+          if (success) {
+            success(data);
+          }
+        },
         error: error
       });
       return false;
     });
-    form.submit();
+    $form.submit();
   }
 }

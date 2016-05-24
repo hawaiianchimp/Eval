@@ -33,14 +33,11 @@
 
   define_db();
 
-  echo DBSERVER.', '.DBUSERNAME.', '.DBPASSWORD.', '.DBDATABASE;
-
   $mysqli = new mysqli(DBSERVER, DBUSERNAME, DBPASSWORD, DBDATABASE);
 
   if ($mysqli->connect_errno) {
     $output = new stdClass();
-    $output->error = $mysqli->connect_errno;
-    echo $output->error;
-    exit;
+    $output->error = $mysqli->connect_error;
+    die("Error: ".$output->error);
   }
 ?>

@@ -1,7 +1,7 @@
 <?php
   $sql = "SELECT * FROM players
           WHERE id = ".$_GET['pid'];
-  $player = [
+  $player = array();
   if (!$result = $mysqli->query($sql)) {
     console('Players: '.$mysqli->connect_errno, 'error');
     console('Players: '.$mysqli->connect_error, 'error');
@@ -11,11 +11,11 @@
 ?>
 
 <div>
-  <div class="col-xs-12 col-md-4">
+  <div class="col-xs-12 col-md-6">
     <?php include 'player-info.php' ?>
   </div>
 
-  <div class="col-xs-12 col-md-8">
+  <div class="col-xs-12 col-md-6">
     <?php include 'player-data.php' ?>
   </div>
 

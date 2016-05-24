@@ -9,6 +9,7 @@
       </div>
       <?php
         if ($_GET['pid']) {
+          include 'components/player-info.php';
           include 'components/data-entry-pu.php';
         }
       ?>
