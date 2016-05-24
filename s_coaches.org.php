@@ -6,6 +6,19 @@
 
 <?php include 'inc/header-close.php' ?>
 <?php include 'inc/db.php' ?>
+<?php
+  if($_GET['pid']) {
+    $sql = "SELECT * FROM players
+            WHERE id = ".$_GET['pid'];
+    $player = array();
+    if (!$result = $mysqli->query($sql)) {
+      console('Players: '.$mysqli->connect_errno, 'error');
+      console('Players: '.$mysqli->connect_error, 'error');
+    } else {
+      $player = $result->fetch_assoc();
+    }
+  }
+?>
   <div class="row">
     <div class="col-xs-12 main">
       <h3 class="sub-header">Coaches View</h3>

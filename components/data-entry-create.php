@@ -12,7 +12,7 @@
                     class="form-control input-lg"
                     onfocus="this.select();"
                     onmouseup="return false;"
-                    placeholder="first name">
+                    placeholder="First name">
         </div>
         <div class="form-group col-xs-12">
           <label for='lastname'>Last Name</label>
@@ -21,7 +21,7 @@
                     class="form-control input-lg"
                     onfocus="this.select();"
                     onmouseup="return false;"
-                    placeholder="last name">
+                    placeholder="Last name">
         </div>
         <div class="form-group col-xs-12">
           <label for='birthday'>birthday</label>
@@ -42,7 +42,7 @@
                     class="form-control"
                     onfocus="this.select();"
                     onmouseup="return false;"
-                    placeholder="League Ag"
+                    placeholder="League age"
                     aria-describedby="sizing-addon-years">
             <span class="input-group-addon" id="sizing-addon-years">years</span>
           </div>

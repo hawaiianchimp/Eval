@@ -18,7 +18,6 @@
     <!--<script src="js/moment.min.js"></script>-->
 
     <!-- Form Submit -->
-    <script> var refreshPath = window.location.path; </script>
     <script src='js/datatables.min.js'></script>
     <script src='js/form-submit.js'></script>
 

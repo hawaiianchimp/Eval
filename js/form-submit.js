@@ -1,4 +1,5 @@
 /*global $*/
+var refreshPath;
 
 // Default Focus
 $('input:first()').focus();
@@ -6,7 +7,7 @@ $('input:first()').focus();
 function formSetup(options) {
   var $form = options.$form || $('form:first()');
   var successText = options.successText || 'Saved!';
-  var refreshPath = options.refreshPath || window.location.pathname;
+  var refreshPath = options.refreshPath;
   var submitOnBlur = options.submitOnBlur;
   var apiUrl = options.url;
   var enableFirstFocus = options.enableFirstFocus;
@@ -49,9 +50,11 @@ function formSetup(options) {
     $form.find('.form-group').removeClass('has-error').addClass('has-success');
     $form.find('.error').text('');
     $form.find('input[type=submit]').val(successText).removeClass('btn-primary').addClass('btn-success');
-    setTimeout(function() {
-      window.location = refreshPath;
-    }, 500);
+    if(refreshPath){
+      setTimeout(function() {
+        window.location = refreshPath;
+      }, 500);
+    }
   }
 
   function errorHandler(xhr, status, error){

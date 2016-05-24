@@ -17,7 +17,7 @@
                     class="btn btn-lg btn-danger"
                     value="Delete">
           <span class="error help-block"></span>
-        </div>xw
+        </div>
       </div>
     </form>
   </div>
