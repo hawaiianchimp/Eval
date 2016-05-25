@@ -9,7 +9,7 @@
               type="hidden"
               value="<?php echo $_GET['pid'] ?>">
         <div class="form-group col-xs-12">
-          <label for='stn'>Burpee Count</label>
+          <label for='stn'></label>
           <div class="input-group input-group-lg">
             <input name="stn"
                     onfocus="this.select();"
@@ -36,14 +36,9 @@
   </div>
 </div>
 <script>
-  var $form = $('.form-stn');
-  var options = {
-    $form: $form,
-    url: 'api/stn.php',
-    submitOnBlur: !$form.find('input[type!=hidden][type!=submit]').filter(function(e){ return !!this.value }).length,
-    enableFormRefreshOnSubmit: enableFormRefreshOnSubmit,
-    enableFirstFocus: true,
-    successText: 'Saved!'
-  }
-  formSetup(options);
+  $(document).ready(function() {
+    var $form = $('.form-stn');
+    var submitOnBlur = !$form.find('input[type!=hidden][type!=submit]').filter(function(e){ return !!this.value }).length;
+    formSetup($form, 'api/stn.php', submitOnBlur, refreshPath);
+  });
 </script>

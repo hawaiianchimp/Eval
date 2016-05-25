@@ -23,11 +23,11 @@
       <th><span>Age</span></th>
       <th><span>Weight</span></th>
       <th><span>Height</span></th>
-      <th><span>Speed</span></th>
-      <th><span>Jump</span></th>
-      <th><span>Leap</span></th>
-      <th><span>Push Ups</span></th>
-      <th><span>Stn 5</span></th>
+      <th><span>30yd</span></th>
+      <th><span>Brd Jmp</span></th>
+      <th><span>4crn</span></th>
+      <th><span>Vert</span></th>
+      <th><span>Brps</span></th>
     </tr>
   </thead>
   <tbody>
@@ -42,9 +42,9 @@
             <td><?php echo round($person['weight']) ?: '' ?></td>
             <td><?php echo round($person['height']) ?: '' ?></td>
             <td><?php echo round($person['speed'],1) ?: '' ?></td>
-            <td><?php echo round($person['jump'],1) ?: '' ?></td>
-            <td><?php echo round($person['leap'],1) ?: '' ?></td>
-            <td><?php echo round($person['pu']) ?: '' ?></td>
+            <td><?php echo round($person['jump']) ?: '' ?></td>
+            <td><?php echo round($person['pu'],1) ?: '' ?></td>
+            <td><?php echo round($person['leap']) ?: '' ?></td>
             <td><?php echo round($person['stn']) ?: '' ?></td>
           </tr>
         </a>

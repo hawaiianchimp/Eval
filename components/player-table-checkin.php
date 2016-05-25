@@ -3,7 +3,7 @@
 
   $sql = "SELECT *
           FROM players
-          WHERE bib IS NULL";
+          WHERE (bib IS NULL) or (end_stamp IS NOT NULL)";
 
   $players = array();
   if (!$result = $mysqli->query($sql)) {
@@ -25,11 +25,11 @@
       <th><span>L-Age</span></th>
       <th><span>Wt</span></th>
       <th><span>Ht</span></th>
-      <th><span>Spd</span></th>
-      <th><span>Jmp</span></th>
-      <th><span>Lp</span></th>
-      <th><span>PU</span></th>
-      <th><span>Stn5</span></th>
+      <th><span>30y</span></th>
+      <th><span>BJmp</span></th>
+      <th><span>4C</span></th>
+      <th><span>VL</span></th>
+      <th><span>Brps</span></th>
     </tr>
   </thead>
   <tbody>
@@ -45,9 +45,9 @@
             <td><?php echo round($person['weight'])  ?: '' ?></td>
             <td><?php echo round($person['height'])  ?: '' ?></td>
             <td><?php echo round($person['speed'],1)  ?: '' ?></td>
-            <td><?php echo round($person['jump'],1)  ?: '' ?></td>
-            <td><?php echo round($person['leap'],1)  ?: '' ?></td>
-            <td><?php echo round($person['pu'])  ?: '' ?></td>
+            <td><?php echo round($person['jump'])  ?: '' ?></td>
+            <td><?php echo round($person['pu'],1)  ?: '' ?></td>
+            <td><?php echo round($person['leap'])  ?: '' ?></td>
             <td><?php echo round($person['stn'])  ?: '' ?></td>
           </tr>
         </a>
