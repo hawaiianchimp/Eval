@@ -3,7 +3,7 @@
 
   $sql = "SELECT *
           FROM players
-          WHERE (bib IS NULL) or (end_stamp IS NOT NULL)";
+          WHERE bib IS NULL";
 
   $players = array();
   if (!$result = $mysqli->query($sql)) {
