@@ -32,7 +32,7 @@
                     class="btn btn-lg btn-primary"
                     value="Save">
         </div>
-      </div>
+
     </form>
   </div>
 </div>

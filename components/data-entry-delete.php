@@ -18,7 +18,7 @@
                     value="Delete">
           <span class="error help-block"></span>
         </div>
-      </div>
+
     </form>
   </div>
 </div>

@@ -36,7 +36,7 @@
         <a>
           <tr onclick="window.document.location='?pid=<?php echo $person['id'] ?>'"
               class="clickable <?php echo ($pid === $person['id']) ? 'info selected':''?>">
-            <td><?php echo tripleDigit($person['bib']) ?></td>
+            <td><?php echo $person['bib']  ?: '' ?></td>
             <td><?php echo $person['lastname'].', '.$person['firstname'] ?></td>
             <td><?php echo $person['age'] ?: '' ?></td>
             <td><?php echo round($person['weight']) ?: '' ?></td>

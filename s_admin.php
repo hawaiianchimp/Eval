@@ -33,6 +33,7 @@
             include 'components/data-entry-leap.php';
             include 'components/data-entry-speed.php';
             include 'components/data-entry-weight.php';
+            include 'components/data-entry-stn.php';
             include 'components/player-data.php';
             include 'components/data-entry-delete.php';
           }

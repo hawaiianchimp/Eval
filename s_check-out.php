@@ -17,10 +17,10 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-xs-12 main">
-      <span style="float:right"><a href="s_check-out.php"><></a> </span>
+      <span style="float:right"><a href="s_check-in.php"><></a> </span>
       <h3 class="sub-header">Check in</h3>
       <div class="table-responsive">
-        <?php include 'components/player-table-checkin.php' ?>
+        <?php include 'components/player-table-checkout.php' ?>
       </div>
       <script> enableFormRefreshOnSubmit = true; </script>
       <div>
@@ -29,7 +29,7 @@
             include 'components/player-info-checkin.php';
             include 'components/data-entry-bib.php';
           }
-          //include 'components/data-entry-create.php';
+          include 'components/data-entry-create.php';
         ?>
       </div>
     </div>

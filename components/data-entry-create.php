@@ -54,7 +54,7 @@
                     value="Create">
           <span class="error help-block"></span>
         </div>
-      </div>
+
     </form>
   </div>
 </div>
