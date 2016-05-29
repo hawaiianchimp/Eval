@@ -18,10 +18,18 @@
           	<strong><h3>
         <?php
         switch ($player['age']) {
-         	case 6-9 :
+         	case 6 :
         	echo "Yellow" ;
 				break;
-
+				  case 7 :
+        		echo "Yellow" ;
+				break;
+				  case 8 :
+        		echo "Yellow" ;
+				break;
+				  case 9 :
+        		echo "Yellow" ;
+				break;
 				  case 10 :
         		echo "Green" ;
 				break;
@@ -31,11 +39,14 @@
          	case 12 :
         		echo "Blue" ;
 				break;
-         	case 13-14 :
+         	case 13 :
+        		echo "Red" ;
+				break;
+         	case 14 :
         		echo "Red" ;
 				break;
         	default :
-        		echo "Error" ;
+        		echo "** Error **" ;
          }
 		 ?>
         </h3></strong>
