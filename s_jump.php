@@ -17,7 +17,7 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-xs-12 main">
-      <h3 class="sub-header">Jump<small> Entry</small></h3>
+      <h3 class="sub-header">Broad Jump<small> (data entry)</small></h3>
       <div class="table-responsive">
         <?php include 'components/player-table.php' ?>
       </div>

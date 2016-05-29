@@ -17,7 +17,7 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-xs-12 main">
-      <h2 class="sub-header">Pushups<small> Entry</small></h2>
+      <h2 class="sub-header">Four Courners<small> (data entry)</small></h2>
       <div class="table-responsive">
         <?php include 'components/player-table.php' ?>
       </div>
