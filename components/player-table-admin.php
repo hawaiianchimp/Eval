@@ -20,6 +20,7 @@
     <tr>
       <th><span>Bib#</span></th>
       <th><span>Name</span></th>
+      <th><span>DOB</span></th>
       <th><span>Age</span></th>
       <th><span>Weight</span></th>
       <th><span>Height</span></th>
@@ -38,7 +39,8 @@
               class="clickable <?php echo ($pid === $person['id']) ? 'info selected':''?>">
             <td><?php echo $person['bib']  ?: '' ?></td>
             <td><?php echo $person['lastname'].', '.$person['firstname'] ?></td>
-            <td><?php echo $person['age'] ?: '' ?></td>
+            <td><?php echo $person['birthday']  ?: '' ?></td>
+            <td><?php echo $person['age']  ?: '' ?></td>
             <td><?php echo round($person['weight']) ?: '' ?></td>
             <td><?php echo round($person['height']) ?: '' ?></td>
             <td><?php echo round($person['speed'],1) ?: '' ?></td>

@@ -22,7 +22,7 @@
       <th><span>Bib#</span></th>
       <th><span>Name</span></th>
       <th><span>DOB</span></th>
-      <th><span>L-Age</span></th>
+      <th><span>Age</span></th>
       <th><span>Wt</span></th>
       <th><span>Ht</span></th>
       <th><span>30y</span></th>
