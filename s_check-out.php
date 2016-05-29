@@ -18,7 +18,7 @@
   <div class="row">
     <div class="col-xs-12 main">
       <span style="float:right"><a href="s_check-in.php"><></a> </span>
-      <h3 class="sub-header">Check in</h3>
+      <h3 class="sub-header">Check out</h3>
       <div class="table-responsive">
         <?php include 'components/player-table-checkout.php' ?>
       </div>

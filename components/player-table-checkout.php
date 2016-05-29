@@ -3,7 +3,7 @@
 
   $sql = "SELECT *
           FROM players";
-          //WHERE bib IS NULL";    //select all players in the table
+
 
   $players = array();
   if (!$result = $mysqli->query($sql)) {
