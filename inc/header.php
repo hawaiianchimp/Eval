@@ -1,5 +1,3 @@
-<?php require 'setup.php' ?>
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -143,3 +141,8 @@
         -webkit-text-size-adjust: 100%;
       }
     </style>
+  </head>
+  <body class="dashboard">
+    <div id="wrapper">
+      <?php include 'components/nav-bar.php'; ?>
+        <div id="page-wrapper">

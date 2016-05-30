@@ -3,8 +3,8 @@
    * Include this file to setup a database connection
    **/
 
-  require 'passwords.php';
-  require 'helpers.php';
+  require_once 'passwords.php';
+  require_once 'helpers.php';
 
   /**
    * Define the database depending on which mysql server is running

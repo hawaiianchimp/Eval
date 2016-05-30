@@ -13,7 +13,7 @@
 <div class="col-xs-12 col-md-6">
   <div class="panel panel-default">
     <div class="panel-heading">
-      <h4>Edit Jump</h4>
+      <h4>Enter Broad Jump Distance</h4>
     </div>
     <div class="panel-body">
       <form class="form form-jmp1">
@@ -33,7 +33,7 @@
                     value="<?php echo $player['jmp1'] ?>"
                     placeholder="<?php echo $player['jmp1'] ?>"
                     aria-describedby="sizing-addon1">
-            <span class="input-group-addon" id="sizing-addon1">sec</span>
+            <span class="input-group-addon" id="sizing-addon1">inches</span>
           </div>
         </div>
 
@@ -50,7 +50,7 @@
                     value="<?php echo $player['jmp2'] ?>"
                     placeholder="<?php echo $player['jmp2'] ?>"
                     aria-describedby="sizing-addon1">
-            <span class="input-group-addon" id="sizing-addon1">sec</span>
+            <span class="input-group-addon" id="sizing-addon1">inches</span>
           </div>
           <span class="error help-block"></span>
         </div>

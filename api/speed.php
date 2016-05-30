@@ -2,8 +2,8 @@
 
 include '../inc/db.php';
 
-$spd1 = $mysqli->real_escape_string(round($_GET['spd1'], 1));
-$spd2 = $mysqli->real_escape_string(round($_GET['spd2'], 1));
+$spd1 = $mysqli->real_escape_string(round($_GET['spd1'], 2));
+$spd2 = $mysqli->real_escape_string(round($_GET['spd2'], 2));
 $pid = $mysqli->real_escape_string($_GET['pid']);
 $output = new stdClass();
 $error = new stdClass();
@@ -20,21 +20,24 @@ if ($pid === '') {
   $error->count++;
 }
 
-if (is_numeric($spd1) && is_numeric($spd2) && $spd2 >= 0 && $spd1 >= 0) {
+if (is_numeric($pu) && is_numeric($pu2) && $pu2 >= 0 && $pu >= 0) {
   $sql = "UPDATE players
-          SET spd1 = '".$spd1."',
-          spd2 = '".$spd2."'
+          SET pu = '".$pu."',
+          pu2 = '".$pu2."',
+          stamp_four = NOW()
           WHERE id = ".$pid;
-} else if (is_numeric($spd2) && $spd2 >= 0) {
+} else if (is_numeric($pu2) && $pu2 >= 0) {
   $sql = "UPDATE players
-          SET spd2 = '".$spd2."'
+          SET pu2 = '".$pu2."'
+          stamp_four = NOW(),
           WHERE id = ".$pid;
-} else if (is_numeric($spd1) && $spd1 >= 0) {
+} else if (is_numeric($pu) && $pu >= 0) {
   $sql = "UPDATE players
-          SET spd1 = '".$spd1."'
+          SET pu = '".$pu."',
+          stamp_four = NOW()
           WHERE id = ".$pid;
 } else {
-  $error->message = "spd1 and spd2 need to be numbers";
+  $error->message = "pu try1 and pu try2 need to be numbers";
   $error->count++;
 }
 

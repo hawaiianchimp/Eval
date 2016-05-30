@@ -1,7 +1,7 @@
 <div class="col-xs-12 col-md-6">
   <div class="panel panel-default">
     <div class="panel-heading">
-      <h4>Edit Pushups</h4>
+      <h4>Enter 4 Corners Time</h4>
     </div>
     <div class="panel-body">
       <form class="form form-pu">
@@ -9,7 +9,7 @@
               type="hidden"
               value="<?php echo $_GET['pid'] ?>">
         <div class="form-group col-xs-12">
-          <label for='pu'>Pushups</label>
+          <label for='pu'></label>
           <div class="input-group input-group-lg">
             <input name="pu"
                     onfocus="this.select();"
@@ -21,7 +21,7 @@
                     value="<?php echo $player['pu'] ?>"
                     placeholder="<?php echo $player['pu'] ?>"
                     aria-describedby="sizing-addon1">
-            <span class="input-group-addon" id="sizing-addon1">cnt</span>
+            <span class="input-group-addon" id="sizing-addon1">Sec</span>
           </div>
           <span class="error help-block"></span>
         </div>

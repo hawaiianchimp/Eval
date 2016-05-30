@@ -21,7 +21,6 @@ function formSetup(options) {
   // Submit when unfocusing on input
   if(submitOnBlur) {
     $form.find('input').blur(function(e) {
-      e.preventDefault();
       submitForm($form, apiUrl);
       return false;
     });
@@ -29,14 +28,12 @@ function formSetup(options) {
 
   // Submit on save key pressed
   $form.find('input[type=submit]').click(function(e) {
-    e.preventDefault();
     submitForm($form, apiUrl, successHandler, errorHandler);
     return false;
   });
 
   // Submit on return key pressed
   $form.submit(function(e) {
-    e.preventDefault();
     if (e.keyCode == 13) {
       submitForm($form, apiUrl, successHandler, errorHandler);
     }
@@ -66,8 +63,9 @@ function formSetup(options) {
   }
 
   function submitForm($form, url, success, error) {
+    $form.unbind('onsubmit');
+    $form.unbind('submit');
     $form.submit(function (e) {
-      e.preventDefault();
       $.ajax({
         url: url,
         dataType: 'json',

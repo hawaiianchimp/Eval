@@ -1,18 +1,7 @@
+<?php include 'inc/setup.php' ?>
+<?php $ACCESS = array(ADMIN_USERNAME, VOLUNTEER_USERNAME, COACH_USERNAME); ?>
+<?php require 'inc/authenticate.php' ?>
 <?php include 'inc/header.php' ?>
-
-<!-- auto-refresh page every n seconds., n = content value -->
-    <meta http-equiv="refresh" content="1000">
-
-<!--
-substituting: include 'inc/header-close.php' with code that strips the nav-bar
--->
-</head>
-  <body>
-    <div>
-      <div id="page-wrapper">
-
-
-
 <?php include 'inc/db.php' ?>
 <?php
   if($_GET['pid']) {
@@ -27,6 +16,7 @@ substituting: include 'inc/header-close.php' with code that strips the nav-bar
     }
   }
 ?>
+<div class="container-fluid">
   <div class="row">
     <div class="col-xs-12 main">
       <h3 class="sub-header">Coaches </h3>
@@ -43,4 +33,11 @@ substituting: include 'inc/header-close.php' with code that strips the nav-bar
       </div>
     </div>
   </div>
+</div>
+<script>
+  //refresh after 30 seconds
+  setTimeout(function() {
+    window.location = window.location.href;
+  }, 30 * 1000);
+</script>
 <?php include 'inc/footer.php';?>

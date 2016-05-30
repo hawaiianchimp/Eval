@@ -43,9 +43,9 @@
             <td><?php echo $person['age']  ?: '' ?></td>
             <td><?php echo round($person['weight']) ?: '' ?></td>
             <td><?php echo round($person['height']) ?: '' ?></td>
-            <td><?php echo round($person['speed'],1) ?: '' ?></td>
+            <td><?php echo round($person['speed'],2) ?: '' ?></td>
             <td><?php echo round($person['jump']) ?: '' ?></td>
-            <td><?php echo round($person['pu'],1) ?: '' ?></td>
+            <td><?php echo round($person['pu'],2) ?: '' ?></td>
             <td><?php echo round($person['leap']) ?: '' ?></td>
             <td><?php echo round($person['stn']) ?: '' ?></td>
           </tr>
@@ -78,6 +78,10 @@
           searchable: true
         },
         {
+          name: 'dob',
+          searchable: true
+        },
+        {
           name: 'age',
           searchable: true
         },
@@ -90,23 +94,23 @@
           searchable: false
         },
         {
-          name: 'speed',
+          name: '30yd',
           searchable: false
         },
         {
-          name: 'jump',
+          name: 'brd',
           searchable: false
         },
         {
-          name: 'leap',
+          name: '4crn',
           searchable: false
         },
         {
-          name: 'pushups',
+          name: 'vert',
           searchable: false
         },
         {
-          name: 'stn-5',
+          name: 'brps',
           searchable: false
         },
       ]

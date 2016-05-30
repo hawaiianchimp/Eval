@@ -23,7 +23,8 @@ if ($pid === '') {
 if (is_numeric($weight) && is_numeric($height) && $weight >= 0 && $height >= 0) {
   $sql = "UPDATE players
           SET weight = '".$weight."',
-          height = '".$height."'
+          height = '".$height."',
+          stamp_wt = NOW()
           WHERE id = ".$pid;
 } else if (is_numeric($height) && $height >= 0) {
   $sql = "UPDATE players
@@ -31,7 +32,8 @@ if (is_numeric($weight) && is_numeric($height) && $weight >= 0 && $height >= 0) 
           WHERE id = ".$pid;
 } else if (is_numeric($weight) && $height >= 0) {
   $sql = "UPDATE players
-          SET weight = '".$weight."'
+          SET weight = '".$weight."',
+          stamp_wt = NOW()
           WHERE id = ".$pid;
 } else {
   $error->message = "Height and weight need to be numbers";

@@ -1,5 +1,7 @@
+<?php include 'inc/setup.php' ?>
+<?php $ACCESS = array(ADMIN_USERNAME, VOLUNTEER_USERNAME); ?>
+<?php require 'inc/authenticate.php' ?>
 <?php include 'inc/header.php' ?>
-<?php include 'inc/header-close.php' ?>
 <?php include 'inc/db.php' ?>
 <?php
   if($_GET['pid']) {
@@ -17,7 +19,7 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-xs-12 main">
-      <h2 class="sub-header">Four Courners<small> (data entry)</small></h2>
+      <h3 class="sub-header">Four Courners<small> (data entry)</small></h3>
       <div class="table-responsive">
         <?php include 'components/player-table.php' ?>
       </div>

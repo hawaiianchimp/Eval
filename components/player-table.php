@@ -61,9 +61,9 @@
             <td><?php echo $person['age'] ?: '' ?></td>
             <td><?php echo round($person['weight']) ?: '' ?></td>
             <td><?php echo round($person['height']) ?: '' ?></td>
-            <td><?php echo round($person['speed'],1) ?: '' ?></td>
+            <td><?php echo round($person['speed'],2) ?: '' ?></td>
             <td><?php echo round($person['jump']) ?: '' ?></td>
-            <td><?php echo round($person['pu'],1) ?: '' ?></td>
+            <td><?php echo round($person['pu'],2) ?: '' ?></td>
             <td><?php echo round($person['leap']) ?: '' ?></td>
             <td><?php echo round($person['stn']) ?: '' ?></td>
           </tr>

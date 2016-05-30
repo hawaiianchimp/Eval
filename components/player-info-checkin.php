@@ -19,32 +19,32 @@
         <?php
         switch ($player['age']) {
          	case 6 :
-        	echo "Yellow" ;
-				break;
+        	  echo "Yellow" ;
+				    break;
 				  case 7 :
         		echo "Yellow" ;
-				break;
+				    break;
 				  case 8 :
         		echo "Yellow" ;
-				break;
+				    break;
 				  case 9 :
         		echo "Yellow" ;
-				break;
+				    break;
 				  case 10 :
         		echo "Green" ;
-				break;
+				    break;
           case 11 :
         		echo "Orange" ;
-				break;
+				    break;
          	case 12 :
         		echo "Blue" ;
-				break;
+				    break;
          	case 13 :
         		echo "Red" ;
-				break;
+				    break;
          	case 14 :
         		echo "Red" ;
-				break;
+				    break;
         	default :
         		echo "** Error **" ;
          }

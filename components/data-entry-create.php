@@ -12,7 +12,8 @@
                     class="form-control input-lg"
                     onfocus="this.select();"
                     onmouseup="return false;"
-                    placeholder="First name">
+                    placeholder="First name"
+                    required>
         </div>
         <div class="form-group col-xs-12">
           <label for='lastname'>Last Name</label>
@@ -21,16 +22,19 @@
                     class="form-control input-lg"
                     onfocus="this.select();"
                     onmouseup="return false;"
-                    placeholder="Last name">
+                    placeholder="Last name"
+                    required>
         </div>
         <div class="form-group col-xs-12">
           <label for='birthday'>birthday</label>
             <input name="birthday"
                     type="date"
+                    max="<?php echo date('Y-m-d');?>"
                     class="form-control input-lg"
                     onfocus="this.select();"
                     onmouseup="return false;"
-                    placeholder="birthday">
+                    placeholder="birthday"
+                    required>
         </div>
         <div class="form-group col-xs-12">
           <label for='age'>Leage Age</label>
@@ -43,7 +47,8 @@
                     onfocus="this.select();"
                     onmouseup="return false;"
                     placeholder="League age"
-                    aria-describedby="sizing-addon-years">
+                    aria-describedby="sizing-addon-years"
+                    required>
             <span class="input-group-addon" id="sizing-addon-years">years</span>
           </div>
         </div>

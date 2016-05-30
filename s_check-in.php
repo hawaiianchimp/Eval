@@ -1,5 +1,7 @@
+<?php include 'inc/setup.php' ?>
+<?php $ACCESS = array(ADMIN_USERNAME, VOLUNTEER_USERNAME); ?>
+<?php require 'inc/authenticate.php' ?>
 <?php include 'inc/header.php' ?>
-<?php include 'inc/header-close.php' ?>
 <?php include 'inc/db.php' ?>
 <?php
   if($_GET['pid']) {

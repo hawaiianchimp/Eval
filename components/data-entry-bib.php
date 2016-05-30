@@ -1,7 +1,7 @@
 <div class="col-xs-12 col-md-6">
   <div class="panel panel-default">
     <div class="panel-heading">
-      <h4>Player Checkin</h4>
+      <h4>Enter Bib Number</h4>
     </div>
     <div class="panel-body">
       <form class="form form-bib">
@@ -9,7 +9,7 @@
               type="hidden"
               value="<?php echo $_GET['pid'] ?>">
         <div class="form-group col-xs-12">
-          <label for='bib'>Bib ID</label>
+          <label for='bib'></label>
           <div class="input-group input-group-lg">
             <input name="bib"
                     type="number"

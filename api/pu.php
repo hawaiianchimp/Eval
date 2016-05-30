@@ -23,15 +23,18 @@ if ($pid === '') {
 if (is_numeric($pu) && is_numeric($pu2) && $pu2 >= 0 && $pu >= 0) {
   $sql = "UPDATE players
           SET pu = '".$pu."',
-          pu2 = '".$pu2."'
+          pu2 = '".$pu2."',
+          stamp_four = NOW()
           WHERE id = ".$pid;
 } else if (is_numeric($pu2) && $pu2 >= 0) {
   $sql = "UPDATE players
           SET pu2 = '".$pu2."'
+          stamp_four = NOW(),
           WHERE id = ".$pid;
 } else if (is_numeric($pu) && $pu >= 0) {
   $sql = "UPDATE players
-          SET pu = '".$pu."'
+          SET pu = '".$pu."',
+          stamp_four = NOW()
           WHERE id = ".$pid;
 } else {
   $error->message = "pu try1 and pu try2 need to be numbers";

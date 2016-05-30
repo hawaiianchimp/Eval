@@ -1,5 +1,7 @@
+<?php include 'inc/setup.php' ?>
+<?php $ACCESS = array(ADMIN_USERNAME); ?>
+<?php require 'inc/authenticate.php' ?>
 <?php include 'inc/header.php' ?>
-<?php include 'inc/header-close.php' ?>
 <?php include 'inc/db.php' ?>
 <?php
   if($_GET['pid']) {
@@ -17,27 +19,31 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-xs-12 main">
-      <h3 class="sub-header">Admin</h3>
+      <h3 class="sub-header">*** LJFL ***</h3>
       <div class="table-responsive">
         <?php include 'components/player-table-admin.php' ?>
       </div>
       <div>
-        <script> enableFormRefreshOnSubmit = false; </script>
+    <!--    <script> enableFormRefreshOnSubmit = false; </script> -->
         <?php
           if ($player['firstname']) {
             include 'components/player-info-checkin.php';
             include 'components/player-info.php';
             include 'components/data-entry-pu.php';
+            include 'components/data-entry-pu.php';
             include 'components/data-entry-bib.php';
+            include 'components/data-entry-weight.php';
+            include 'components/data-entry-speed.php';
             include 'components/data-entry-jump.php';
             include 'components/data-entry-leap.php';
-            include 'components/data-entry-speed.php';
-            include 'components/data-entry-weight.php';
+
+          }
+          include 'components/data-entry-create.php';
+          if ($player['firstname']) {
             include 'components/data-entry-stn.php';
             include 'components/player-data.php';
             include 'components/data-entry-delete.php';
           }
-          include 'components/data-entry-create.php';
         ?>
       </div>
     </div>
