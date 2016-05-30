@@ -29,9 +29,8 @@
           if ($player['firstname']) {
             include 'components/player-info-checkin.php';
             include 'components/player-info.php';
-            include 'components/data-entry-pu.php';
-            include 'components/data-entry-pu.php';
             include 'components/data-entry-bib.php';
+            include 'components/data-entry-pu.php';
             include 'components/data-entry-weight.php';
             include 'components/data-entry-speed.php';
             include 'components/data-entry-jump.php';

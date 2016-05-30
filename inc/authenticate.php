@@ -22,7 +22,7 @@
   }
   if (!in_array($_SESSION['access'], $ACCESS)) {
     $err = 'You do not have access to this page. Please login with the correct user.';
-    require_once 'login.php';
+    require_once '../login.php';
     die;
   }
 ?>
