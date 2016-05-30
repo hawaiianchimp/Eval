@@ -1,7 +1,7 @@
 <div class="col-xs-12 col-md-6">
   <div class="panel panel-default">
     <div class="panel-heading">
-      <h4>Edit Speed</h4>
+      <h4>Enter Sprint Time</h4>
     </div>
     <div class="panel-body">
       <form class="form form-spd1">

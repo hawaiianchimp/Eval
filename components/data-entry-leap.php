@@ -43,11 +43,6 @@
           <span class="error help-block"></span>
         </div>
         <div class="form-group col-xs-12">
-          <div class="input-group input-group-lg">
-
-          </div>
-        </div>
-        <div class="form-group col-xs-12">
         <input name="save"
                     type="submit"
                     class="btn btn-lg btn-primary"
