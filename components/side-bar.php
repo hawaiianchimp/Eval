@@ -23,11 +23,11 @@
         <li class="<?php echo (strpos($_SERVER['REQUEST_URI'],'/s_jump.php') !== false) ? 'active':''?>">
             <a href="s_jump.php"><i class="fa fa-fw fa-table"></i> Brd Jump</a>
         </li>
-        <li class="<?php echo (strpos($_SERVER['REQUEST_URI'],'/s_leap.php') !== false) ? 'active':''?>">
-            <a href="s_leap.php"><i class="fa fa-fw fa-long-arrow-up"></i> Vertical</a>
-        </li>
         <li class="<?php echo (strpos($_SERVER['REQUEST_URI'],'/s_pu.php') !== false) ? 'active':''?>">
             <a href="s_pu.php"><i class="fa fa-fw fa-th-large"></i> 4 Corners</a>
+        </li>
+        <li class="<?php echo (strpos($_SERVER['REQUEST_URI'],'/s_leap.php') !== false) ? 'active':''?>">
+            <a href="s_leap.php"><i class="fa fa-fw fa-long-arrow-up"></i> Vertical</a>
         </li>
         <li class="<?php echo (strpos($_SERVER['REQUEST_URI'],'/s_other.php') !== false) ? 'active':''?>">
             <a href="s_other.php"><i class="fa fa-fw fa-heart"></i> Burpees</a>

@@ -62,16 +62,6 @@ body {
     line-height: normal;
 }
 
-@media(min-width:768px) {
-    #wrapper {
-        padding-left: 225px;
-    }
-
-    #page-wrapper {
-        padding: 10px;
-    }
-}
-
 /* Top Navigation */
 
 .top-nav {
@@ -142,7 +132,16 @@ ul.alert-dropdown {
 
 /* Side Navigation */
 
-@media(min-width:768px) {
+@media(min-width:2733px) {
+
+    #wrapper {
+        padding-left: 225px;
+    }
+
+    #page-wrapper {
+        padding: 10px;
+    }
+
     .side-nav {
         position: fixed;
         top: 0px;
@@ -326,10 +325,16 @@ body.signin {
 .form-signin .form-control:focus {
   z-index: 2;
 }
-.form-signin #username {
+
+.form-signin #cname {
   margin-bottom: -1px;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
+}
+
+.form-signin #username {
+  margin-bottom: -1px;
+  border-radius: 0;
 }
 .form-signin #psswrd {
   margin-bottom: 10px;

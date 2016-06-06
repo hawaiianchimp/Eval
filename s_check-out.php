@@ -19,8 +19,8 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-xs-12 main">
-      <span style="float:right"><a href="s_check-in.php"><></a> </span>
-      <h3 class="sub-header">Check out</h3>
+      <span style="float:right"><a href="s_check-in.php"> >>>SWITCH<<< </a> </span>
+      <h3 class="sub-header" style="background-color:Red; line-height:150%">Check out </a> </span></h3>
       <div class="table-responsive">
         <?php include 'components/player-table-checkout.php' ?>
       </div>

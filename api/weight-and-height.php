@@ -28,7 +28,8 @@ if (is_numeric($weight) && is_numeric($height) && $weight >= 0 && $height >= 0) 
           WHERE id = ".$pid;
 } else if (is_numeric($height) && $height >= 0) {
   $sql = "UPDATE players
-          SET height = '".$height."'
+          SET height = '".$height."',
+          stamp_wt = NOW()
           WHERE id = ".$pid;
 } else if (is_numeric($weight) && $height >= 0) {
   $sql = "UPDATE players

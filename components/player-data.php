@@ -5,6 +5,8 @@
     </div>
     <div class="panel-body">
       <dl class="row">
+      <dt class="col-6-xs">Age: </dt>
+      <dd class="col-6-xs"><?php echo $player['age'] ?></dd><br />
       <dt class="col-6-xs">Weight: </dt>
       <dd class="col-6-xs"><?php echo $player['weight'] ?></dd><br />
       <dt class="col-6-xs">Height: </dt>

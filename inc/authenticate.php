@@ -4,7 +4,9 @@
 
   //Set the timeout to 60 minutes
   if ($_SESSION['timeout'] + 60 * 60 < time()) {
-    $err = 'Session timedout';
+    if ($_SESSION['timeout']) {
+      $err = 'Session Timeout';
+    }
     session_unset();
   }
 

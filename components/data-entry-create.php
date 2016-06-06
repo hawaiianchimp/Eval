@@ -53,6 +53,9 @@
           </div>
         </div>
         <div class="form-group col-xs-12">
+
+        </div>
+        <div class="form-group col-xs-12">
           <input name="create"
                     type="submit"
                     class="btn btn-lg btn-primary"

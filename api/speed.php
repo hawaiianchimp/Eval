@@ -20,24 +20,24 @@ if ($pid === '') {
   $error->count++;
 }
 
-if (is_numeric($pu) && is_numeric($pu2) && $pu2 >= 0 && $pu >= 0) {
+if (is_numeric($spd1) && is_numeric($spd2) && $spd2 >= 0 && $spd1 >= 0) {
   $sql = "UPDATE players
-          SET pu = '".$pu."',
-          pu2 = '".$pu2."',
-          stamp_four = NOW()
+          SET spd1 = '".$spd1."',
+          spd2 = '".$spd2."',
+          stamp_run = NOW()
           WHERE id = ".$pid;
-} else if (is_numeric($pu2) && $pu2 >= 0) {
+} else if (is_numeric($spd2) && $spd2 >= 0) {
   $sql = "UPDATE players
-          SET pu2 = '".$pu2."'
-          stamp_four = NOW(),
+          SET spd2 = '".$spd2."',
+          stamp_run = NOW()
           WHERE id = ".$pid;
-} else if (is_numeric($pu) && $pu >= 0) {
+} else if (is_numeric($spd1) && $spd1 >= 0) {
   $sql = "UPDATE players
-          SET pu = '".$pu."',
-          stamp_four = NOW()
+          SET spd1 = '".$spd1."',
+          stamp_run = NOW()
           WHERE id = ".$pid;
 } else {
-  $error->message = "pu try1 and pu try2 need to be numbers";
+  $error->message = "spd1 and spd2 need to be numbers";
   $error->count++;
 }
 

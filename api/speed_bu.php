@@ -2,8 +2,8 @@
 
 include '../inc/db.php';
 
-$stn = $mysqli->real_escape_string($_GET['stn']);
-$stn2 = $mysqli->real_escape_string($_GET['stn2']);
+$spd1 = $mysqli->real_escape_string(round($_GET['spd1'], 2));
+$spd2 = $mysqli->real_escape_string(round($_GET['spd2'], 2));
 $pid = $mysqli->real_escape_string($_GET['pid']);
 $output = new stdClass();
 $error = new stdClass();
@@ -15,29 +15,26 @@ if ($pid === '') {
 } else if (!is_numeric($pid)) {
   $error->message = "Player id needs to be a number";
   $error->count++;
-} else if ($stn === '' && $stn2 === '') {
-  $error->message = "No stn try1 or stn try2 provided";
+} else if ($spd1 === '' && $spd2 === '') {
+  $error->message = "No spd1 or spd2 provided";
   $error->count++;
 }
 
-if (is_numeric($stn) && is_numeric($stn2) && $stn2 >= 0 && $stn >= 0) {
+if (is_numeric($pu) && is_numeric($pu2) && $pu2 >= 0 && $pu >= 0) {
   $sql = "UPDATE players
-          SET stn = '".$stn."',
-          stn2 = '".$stn2."',
-          end_stamp = NOW()
+          SET pu = '".$pu."',
+          pu2 = '".$pu2."'
           WHERE id = ".$pid;
-} else if (is_numeric($stn2) && $stn2 >= 0) {
+} else if (is_numeric($pu2) && $pu2 >= 0) {
   $sql = "UPDATE players
-          SET stn2 = '".$stn2."',
-          end_stamp = NOW()
+          SET pu2 = '".$pu2."'
           WHERE id = ".$pid;
-} else if (is_numeric($stn) && $stn >= 0) {
+} else if (is_numeric($pu) && $pu >= 0) {
   $sql = "UPDATE players
-          SET stn = '".$stn."',
-          end_stamp = NOW()
+          SET pu = '".$pu."'
           WHERE id = ".$pid;
 } else {
-  $error->message = "stn try1 and stn try2 need to be numbers";
+  $error->message = "pu try1 and pu try2 need to be numbers";
   $error->count++;
 }
 
@@ -45,6 +42,13 @@ if ($error->count === 0) {
 
   if ($mysqli->query($sql) === true) {
     http_response_code(200);
+
+    $speed = @min(array_filter([$spd1, $spd2]));
+    $sql = "UPDATE players
+          SET speed = ".$speed."
+          WHERE id = ".$pid;
+    $mysqli->query($sql);
+
     $output->status = http_response_code();
     $output->message = "Update Successful";
     echo json_encode($output);

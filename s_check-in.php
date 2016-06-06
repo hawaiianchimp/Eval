@@ -19,7 +19,7 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-xs-12 main">
-      <span style="float:right"><a href="s_check-out.php"><></a> </span>
+      <span style="float:right"><a href="s_check-out.php"> >>>SWITCH<<< </a> </span>
       <h3 class="sub-header">Check in</h3>
       <div class="table-responsive">
         <?php include 'components/player-table-checkin.php' ?>
